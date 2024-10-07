@@ -41,8 +41,8 @@
             font-family: Arial, sans-serif;
         }
 
-        .btn {
-            transform: translate(88px, 320px);
+        .sign-in-btn {
+            transform: translate(35px, 320px);
             cursor: grab;
             margin-right: 15px;
         }
@@ -56,10 +56,13 @@
             <div class="card login-card">
 
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary" id="multiToggleBtn1"
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="button" class="btn btn-secondary sign-in-btn" id="multiToggleBtn1"
                         title="You must already have an account">
                         Sign In
                     </button>
+
+                    </div>
 
                     <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight"
                         aria-labelledby="offcanvasRightLabel">
@@ -111,37 +114,37 @@
 
                                                     <div class="row mt-2">
                                                         <a href="">
-                                                            <p>Forgot password?</p>
+                                                            <p style="font-size: 13px;">Forgot password?</p>
                                                         </a>
                                                     </div>
-                                                   
-                                                    <button type="reset" value="clear" >
-                                                        Clear
-                                                    </button>
-                                                                <button type="reset" id="submit" value="Clear"
-                                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                                    style="color: #ffffff;"></i> Clear</button>
-                                                        </div>
 
-                                                        <div class="col-6 text-start">
-                                                            <button type="submit" id="submit" value="Add Employee"
-                                                                class="btn btn-success"><i
-                                                                    class="fa-solid fa-right-to-bracket"
-                                                                    style="color: #ffffff;"></i> Login</button>
-                                                        </div>
-                                                 
-                                                </form>
-                                        </div>
+                                                <!--create user and clear button-->
+                                                <div class="row mt-5">
+                                                    <div class="col-6 text-start">
+                                                        <button type="reset" id="submit" value="Clear"
+                                                            class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                                style="color: #ffffff;"></i> Clear</button>
+                                                    </div>
+
+                                                    <div class="col-6 text-start">
+                                                        <button type="submit" id="submit" value="Add Employee"
+                                                            class="btn btn-success"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> Sign In</button>
+
+                                                    </div>
+                                                </div>
+
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="col-2"></div>
                             </div>
+                            <div class="col-2"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-2"></div>
             </div>
+            <div class="col-2"></div>
         </div>
+    </div>
     </div>
 
 
