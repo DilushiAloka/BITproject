@@ -1,0 +1,60 @@
+body {
+    background-image: url('../images/bg.png'); /* Replace with your image URL */
+    background-size: cover; /* Make the image cover the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background image fixed */
+    color: #fff; /* White text */
+  }
+.header {
+    background-color:#343a40;
+}
+
+/*OFF CANVAS*/
+.offcanvas-header{
+    background-color: #343a40;
+    color: white;
+    
+}
+.offcanvas-body{
+    background-color: #343a40;
+    color: white;
+    
+}
+
+#offcanvasRight{
+  padding: 0;
+}
+.offcanvas-title {
+    font-size: 1.5rem;
+}
+
+.list-unstyled > li > a {
+    display: block;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .list-unstyled > li > a:hover {
+    background-color: #9b9c9da0;
+    color: #fff;
+  }
+  .collapse > li > a {
+    padding-left: 30px;}
+
+    /*option buttons on table*/
+    .options-btn {
+        visibility: hidden; 
+        border: none;
+      }
+      tr:hover .options-btn {
+        visibility: visible;
+      }
+
+
+      .card-img {
+        height: 500px;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+     
