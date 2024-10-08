@@ -57,10 +57,10 @@
 
                 <div class="col-3">
                     <div class="d-grid gap-2 col-6 mx-auto">
-                    <button type="button" class="btn btn-secondary sign-in-btn" id="multiToggleBtn1"
-                        title="You must already have an account">
-                        Sign In
-                    </button>
+                        <button type="button" class="btn btn-secondary sign-in-btn" id="multiToggleBtn1"
+                            title="You must already have an account">
+                            Sign In
+                        </button>
 
                     </div>
 
@@ -76,8 +76,10 @@
                                 <div class="col-2"></div>
                                 <div class="col-8">
                                     <div class="card">
-                                        <div class="card-body">
-                                            <form action="">
+                                        <img src="../images/bg.png" class="card-img" alt="Background Image">
+                                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                            <div class="card-body">
+
                                                 <!--required mark-->
                                                 <div class="row">
                                                     <div class="col-12 fw-bold text-end">
@@ -91,11 +93,10 @@
                                                             <span class="input-group-text col-3 fw-bold"
                                                                 onClick=this.parentNode.children[1].focus();
                                                                 style="background-color:#343a40; color: #ffffff;"
-                                                                id="basic-addon1">Username<span class="text-danger">
+                                                                id="username">Username<span class="text-danger">
                                                                     *</span></span>
                                                             <input type="text" class="form-control"
-                                                                placeholder="Enter username" aria-label="NIC"
-                                                                aria-describedby="basic-addon1">
+                                                                placeholder="Type Username...">
                                                         </div>
                                                     </div>
 
@@ -104,11 +105,10 @@
                                                             <span class="input-group-text col-3 fw-bold"
                                                                 onClick=this.parentNode.children[1].focus();
                                                                 style="background-color:#343a40; color: #ffffff;"
-                                                                id="basic-addon1">Password<span class="text-danger">
+                                                                id="password">Password<span class="text-danger">
                                                                     *</span></span>
                                                             <input type="password" class="form-control"
-                                                                placeholder="Enter password" aria-label="NIC"
-                                                                aria-describedby="basic-addon1">
+                                                                placeholder="Type Password...">
                                                         </div>
                                                     </div>
 
@@ -118,54 +118,54 @@
                                                         </a>
                                                     </div>
 
-                                                <!--create user and clear button-->
-                                                <div class="row mt-5">
-                                                    <div class="col-6 text-start">
-                                                        <button type="reset" id="submit" value="Clear"
-                                                            class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                                style="color: #ffffff;"></i> Clear</button>
+                                                    <!--create user and clear button-->
+                                                    <div class="row mt-5">
+                                                        <div class="col-6 text-start">
+                                                            <button type="reset" id="submit" value="Clear"
+                                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                                    style="color: #ffffff;"></i> Clear</button>
+                                                        </div>
+
+                                                        <div class="col-6 text-start">
+                                                            <button type="submit" id="submit" value="Add Employee"
+                                                                class="btn btn-success"><i
+                                                                    class="fa-solid fa-right-to-bracket"
+                                                                    style="color: #ffffff;"></i> Sign In</button>
+                                                        </div>
                                                     </div>
-
-                                                    <div class="col-6 text-start">
-                                                        <button type="submit" id="submit" value="Add Employee"
-                                                            class="btn btn-success"><i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i> Sign In</button>
-
-                                                    </div>
-                                                </div>
-
-                                        </form>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="col-2"></div>
                                 </div>
                             </div>
-                            <div class="col-2"></div>
                         </div>
                     </div>
+                    <div class="col-2"></div>
                 </div>
             </div>
-            <div class="col-2"></div>
         </div>
-    </div>
-    </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize tooltip
-            var tooltipTriggerEl = document.getElementById('multiToggleBtn1');
-            var tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Initialize tooltip
+                var tooltipTriggerEl = document.getElementById('multiToggleBtn1');
+                var tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
 
-            // Add event listener to the button
-            document.getElementById('multiToggleBtn1').addEventListener('click', function () {
-                // Toggle tooltip
-                tooltip.toggle();
+                // Add event listener to the button
+                document.getElementById('multiToggleBtn1').addEventListener('click', function () {
+                    // Toggle tooltip
+                    tooltip.toggle();
 
-                // Toggle offcanvas
-                var offcanvasElement = document.getElementById('offcanvasRight');
-                var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
-                offcanvas.toggle();
+                    // Toggle offcanvas
+                    var offcanvasElement = document.getElementById('offcanvasRight');
+                    var offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                    offcanvas.toggle();
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>

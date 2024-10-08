@@ -26,9 +26,11 @@
 
 
 <body>
+
+    <!-- NAVIGATION OFFCANVAS -->
+
     <div class="row header">
         <div class="col-4 p-4 ">
-            <!--OFF CANVAS-->
             <button class="btn fa fa-2x" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
                     class="fa-solid fa-bars" style="color: #ffffff;"></i>
@@ -178,22 +180,6 @@
                                             style="color: #fd0d0d;"></i></button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Cashier</td>
-                                <td>Order</td>
-                                <td>Active</td>
-                                <td>Active</td>
-                                <td>Inactive</td>
-                                <td>
-                                    <button class="options-btn"><i class="fa-solid fa-eye"
-                                            style="color: #071731;"></i></button>
-                                    <button class="options-btn"><i class="fa-solid fa-pen-to-square"
-                                            style="color: #089131;"></i></button>
-                                    <button class="options-btn"><i class="fa-solid fa-trash-can"
-                                            style="color: #fd0d0d;"></i></button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
 
@@ -236,13 +222,13 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="basic-addon1">Roles<span class="text-danger"> *</span></span>
+                                                    id="roles">Roles<span class="text-danger"> *</span></span>
                                                 <div class="btn-group dropend">
                                                     <button type="button" class="btn dropdown-toggle"
                                                         data-bs-toggle="dropdown" aria-expanded="false">
                                                         Select Role
                                                     </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                    <ul class="dropdown-menu">
                                                         <li><button class="dropdown-item" type="button">Owner</button>
                                                         </li>
                                                         <li><button class="dropdown-item" type="button">Sales
@@ -256,31 +242,23 @@
                                         </div>
 
 
-                                        <!--modules dropdown-->
+                                        <!--modules datalist-->
                                         <div class="row mt-3">
                                             <div class="input-group">
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="basic-addon1">Module<span class="text-danger">
+                                                    id="modules">Modules<span class="text-danger">
                                                         *</span></span>
-                                                <div class="btn-group dropend">
-                                                    <button type="button" class="btn dropdown-toggle"
-                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Select Module
-                                                    </button>
 
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <li><button class="dropdown-item"
-                                                                type="button">Production</button>
-                                                        </li>
-                                                        <li><button class="dropdown-item"
-                                                                type="button">Customers</button>
-                                                        </li>
-                                                        <li><button class="dropdown-item" type="button">Sales</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+
+                                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                                    placeholder="Type to search...">
+                                                <datalist id="datalistOptions">
+                                                    <option value="Designs">
+                                                    <option value="product management">
+                                                    <option value="inventory">
+                                                </datalist>
                                             </div>
                                         </div>
 
@@ -291,7 +269,7 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="basic-addon1">Insert<span class="text-danger">
+                                                    id="insert">Insert<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check form-switch m-2">
@@ -303,56 +281,56 @@
                                             </div>
                                         </div>
 
-                                            <div class="row mt-3">
-                                                <div class="input-group">
-                                                    <span class="input-group-text col-3 fw-bold"
-                                                        onClick=this.parentNode.children[1].focus();
-                                                        style="background-color:#343a40; color: #ffffff;"
-                                                        id="basic-addon1">Update<span class="text-danger">
-                                                            *</span></span>
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-3 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="update">Update<span class="text-danger">
+                                                        *</span></span>
 
-                                                    <div class="form-check form-switch m-2">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="flexSwitchCheckChecked" checked>
-                                                        <label class="form-check-label"
-                                                            for="flexSwitchCheckChecked">Active</label>
-                                                    </div>
+                                                <div class="form-check form-switch m-2">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="flexSwitchCheckChecked" checked>
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckChecked">Active</label>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                                <div class="row mt-3">
-                                                    <div class="input-group">
-                                                        <span class="input-group-text col-3 fw-bold"
-                                                            onClick=this.parentNode.children[1].focus();
-                                                            style="background-color:#343a40; color: #ffffff;"
-                                                            id="basic-addon1">Delete<span class="text-danger">
-                                                                *</span></span>
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-3 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="delete">Delete<span class="text-danger">
+                                                        *</span></span>
 
-                                                        <div class="form-check form-switch m-2">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="flexSwitchCheckChecked" checked>
-                                                            <label class="form-check-label"
-                                                                for="flexSwitchCheckChecked">Active</label>
-                                                        </div>
-                                                    </div>
+                                                <div class="form-check form-switch m-2">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="flexSwitchCheckChecked" checked>
+                                                    <label class="form-check-label"
+                                                        for="flexSwitchCheckChecked">Active</label>
                                                 </div>
-                                                    
+                                            </div>
+                                        </div>
 
-                                                    <!--create user and clear button-->
-                                                    <div class="row mt-5">
-                                                        <div class="col-6 text-start">
-                                                            <button type="reset" id="submit" value="Clear"
-                                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                                    style="color: #ffffff;"></i> Clear</button>
-                                                        </div>
 
-                                                        <div class="col-6 text-start">
-                                                            <button type="submit" id="submit" value="save"
-                                                                class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                                    style="color: #ffffff;"></i> Save</button>
+                                        <!--create user and clear button-->
+                                        <div class="row mt-5">
+                                            <div class="col-6 text-start">
+                                                <button type="reset" id="submit" value="Clear"
+                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                        style="color: #ffffff;"></i> Clear</button>
+                                            </div>
 
-                                                        </div>
-                                                    </div>
+                                            <div class="col-6 text-start">
+                                                <button type="submit" id="submit" value="save"
+                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                        style="color: #ffffff;"></i> Save</button>
+
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
