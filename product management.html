@@ -7,7 +7,7 @@
 
     <!--Title logo-->
     <link rel="icon" href="../images/Logo.png">
-    <title>Designs | Ceylon Walls</title>
+    <title>Product Management | Ceylon Walls</title>
 
     <!--my css file-->
     <link href="systemCss.css" rel="stylesheet">
@@ -21,7 +21,17 @@
 
     <!--link font awesome css file-->
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
+
+    <style>
+        .scrollable-card {
+            height: 500px;
+            /* Set the desired height */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+    </style>
 </head>
+
 
 
 
@@ -55,10 +65,10 @@
                                 aria-expanded="false" aria-controls="salesmenue"><i
                                     class="fa-solid fa-money-bill-trend-up" style="color: #ffffff;"></i> Sales</a>
                             <ul class="collapse list-unstyled" id="salesmenue">
-                                <li><a href="customers.html" class="d-block">Customers</a></li>
-                                <li><a href="invoice.html" class="d-block">Invoice</a></li>
-                                <li><a href="customer payments.html" class="d-block">Customers Payments</a></li>
-                                <li><a href="delivery.html" class="d-block">Delivery</a></li>
+                                <li><a href="#webdesign" class="d-block">Invoice</a></li>
+                                <li><a href="#seo" class="d-block">Customer payments</a></li>
+                                <li><a href="#marketing" class="d-block">Customers</a></li>
+                                <li><a href="#marketing" class="d-block">Delivery</a></li>
                             </ul>
                         </li>
                         <hr>
@@ -68,22 +78,13 @@
                                 aria-expanded="false" aria-controls="inventorymenu"><i class="fa-solid fa-cubes-stacked"
                                     style="color: #ffffff;"></i> Inventory</a>
                             <ul class="collapse list-unstyled" id="inventorymenu">
-                                <li><a href="design.html" class="d-block">Designs</a></li>
-                                <li><a href="product management.html" class="d-block">Products</a></li>
-                                <li><a href="product inventory.html" class="d-block">Product Inventory</a></li>
-                                <li><a href="material management.html" class="d-block">Material Management</a></li>
-                                                           </ul>
-                        </li>
-                        <hr>
-                        <li>
-                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#purchasemenu"
-                                aria-expanded="false" aria-controls="purchasemenu"><i class="fa-solid fa-cart-shopping"
-                                    style="color: #ffffff;"></i> Production</a>
-                            <ul class="collapse list-unstyled" id="purchasemenu">
-                                <li><a href="production order management.html" class="d-block">Production Order management</a></li>
-                                <li><a href="production order confirmation.html" class="d-block">Production Order Confirmation</a></li>
-                                <li><a href="production.html" class="d-block">Production</a></li>
-                                                           </ul>
+                                <li><a href="#webdesign" class="d-block">Designs</a></li>
+                                <li><a href="#webdesign" class="d-block">Product Management</a></li>
+                                <li><a href="#seo" class="d-block">Production Inventory</a></li>
+                                <li><a href="#marketing" class="d-block">Material Management</a></li>
+                                <li><a href="#marketing" class="d-block">Material Inventory</a></li>
+                                <li><a href="#home" class="d-block">Production Order</a></li>
+                            </ul>
                         </li>
                         <hr>
                         <li>
@@ -91,10 +92,10 @@
                                 aria-expanded="false" aria-controls="purchasemenu"><i class="fa-solid fa-cart-shopping"
                                     style="color: #ffffff;"></i> Purchase</a>
                             <ul class="collapse list-unstyled" id="purchasemenu">
-                                <li><a href="suppliers.html" class="d-block">Suppliers</a></li>
-                                <li><a href="purchase request.html" class="d-block">Purchase request</a></li>
-                                <li><a href="grn.html" class="d-block">Goods Received Note</a></li>
-                                <li><a href="supplier payment.html" class="d-block">Supplier Payments</a></li>
+                                <li><a href="#webdesign" class="d-block">Suppliers</a></li>
+                                <li><a href="#seo" class="d-block">Purchase request</a></li>
+                                <li><a href="#marketing" class="d-block">Goods Received Note</a></li>
+                                <li><a href="#marketing" class="d-block">Supplier Payments</a></li>
                             </ul>
                         </li>
                         <hr>
@@ -131,10 +132,10 @@
         <div class="col-8 p-4">
             <div class="row">
                 <div class="col-1 text-end">
-                    <i class="fa-solid fa-paintbrush fa-2x" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-layer-group fa-2x" style="color: #ffffff;"></i>
                 </div>
                 <div class="col-11">
-                    <h2 style="color: #ffffff;">Designs</h2>
+                    <h2 style="color: #ffffff;">Product Management</h2>
                 </div>
             </div>
         </div>
@@ -163,10 +164,16 @@
                     <table id="tableUsers" class="table table-striped table-hover ">
                         <thead class="table-dark text-start">
                             <tr>
+                                <th>Product ID</th>
                                 <th>Design Code</th>
-                                <th>Image</th>
+                                <th>Photo</th>
                                 <th>Name</th>
-                                <th>Category</th>
+                                <th>Category_id</th>
+                                <th>Frame size</th>
+                                <th>Frame type</th>
+                                <th>Material list</th>
+                                <th>material_cost</th> 
+                                <!--etc...-->
                                 <th>Status</th>
                                 <th>Notes</th>
                                 <th>Options</th>
@@ -216,7 +223,7 @@
                         <div class="card">
                             <img src="../images/bg.png" class="card-img" alt="Background Image">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="card-body">
+                                <div class="card-body scrollable-card">
 
                                     <!--required mark-->
                                     <div class="row">
@@ -227,6 +234,16 @@
 
                                     <form action="">
 
+                                        <!--product id filed-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-3 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="designCode">Product ID</span>
+                                                <input type="text" class="form-control" disabled>
+                                            </div>
+                                        </div>
 
 
                                         <!--design code filed-->
@@ -236,8 +253,21 @@
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="designCode">Design code</span>
-                                                <input type="text" class="form-control" 
-                                                    disabled>
+                                                <input type="text" class="form-control" disabled>
+                                            </div>
+                                        </div>
+
+
+                                        <!--product name field-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-3 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="imageName">Product Name<span class="text-danger">
+                                                        *</span></span>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Type Design Name..." required>
                                             </div>
                                         </div>
 
@@ -255,20 +285,7 @@
                                         </div>
 
 
-                                        <!--image name field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageName">Image Name<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Type Design Name..." required>
-                                            </div>
-                                        </div>
-
-                                        <!-- category datalist-->
+                                        <!-- producy category  id datalist-->
                                         <div class="row mt-3">
                                             <div class="input-group">
                                                 <span class="input-group-text col-3 fw-bold"
@@ -281,12 +298,48 @@
                                                 <input class="form-control" list="datalistOptions" id="exampleDataList"
                                                     placeholder="Type to search...">
                                                 <datalist id="datalistOptions">
-                                                    <option value="Boho Art">
-                                                    <option value="Psydelic Art">
-                                                    <option value="Religious Art - Buddhist">
-                                                    <option value="Religious Art - Catholic">
-                                                    <option value="Floral Art">
+                                                    <option value="0001 - Boho Art">
+                                                    <option value="0002 - Psydelic Art">
+                                                    <option value="00003 - Religious Art - Buddhist">
                                                 </datalist>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- frameSize dropdown-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-3 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="category">Frame size ID<span class="text-danger">
+                                                        *</span></span>
+
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Frame Size</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- frameType dropdown-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-3 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="category">Frame type ID<span class="text-danger">
+                                                        *</span></span>
+
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Frame Type</option>
+                                                    <option value="1">Framed Wall art</option>
+                                                    <option value="2">Canvas Frame</option>
+                                                    <option value="3">Floating Frame</option>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -315,6 +368,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <!-- orientation radiobutton-->
                                         <div class="row mt-3">
