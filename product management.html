@@ -132,7 +132,7 @@
         <div class="col-8 p-4">
             <div class="row">
                 <div class="col-1 text-end">
-                    <i class="fa-solid fa-layer-group fa-2x" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-layer-group fa-bounce fa-2x" style="color: #ffffff;"></i>
                 </div>
                 <div class="col-11">
                     <h2 style="color: #ffffff;">Product Management</h2>
@@ -144,7 +144,7 @@
 
     <!--TABLE SECTION-->
     <div class="row mt-5">
-               <div class="col-12">
+        <div class="col-12">
 
             <!--ADD BUTTON-->
             <div class="row text-end">
@@ -171,8 +171,6 @@
                                 <th>Frame size</th>
                                 <th>Frame type</th>
                                 <th>Material list</th>
-                                <th>material_cost</th> 
-                                <!--etc...-->
                                 <th>Status</th>
                                 <th>Notes</th>
                                 <th>Options</th>
@@ -185,10 +183,44 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
+                                <td> </td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+
+                                <td><button type="button" class="btn btn-primary  btn-sm rounded-5"
+                                        data-bs-toggle="modal" data-bs-target="#materialsModal">View</button>
+
+                                    <!--Material List Modal -->
+                                    <div class="modal fade modal-lg" id="materialsModal" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="materialsModal">Material List</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-hover">
+                                                        <tr>
+                                                            <th>Material ID</th>
+                                                            <th>Quantity</th>
+                                                            <th>Unit Price</th>
+                                                            <th>Line total</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td></td>
                                 <td></td>
 
@@ -206,7 +238,7 @@
 
                 </div>
             </div>
-          
+
         </div>
 
 
@@ -241,7 +273,7 @@
                                         <!--product id filed-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="designCode">Product ID</span>
@@ -253,7 +285,7 @@
                                         <!--design code filed-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="designCode">Design code</span>
@@ -265,7 +297,7 @@
                                         <!--product name field-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="imageName">Product Name<span class="text-danger">
@@ -279,7 +311,7 @@
                                         <!--photo filed-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="image">Image<span class="text-danger">
@@ -292,7 +324,7 @@
                                         <!-- producy category  id datalist-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="category">Category<span class="text-danger">
@@ -313,7 +345,7 @@
                                         <!-- frameSize dropdown-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="category">Frame size ID<span class="text-danger">
@@ -332,7 +364,7 @@
                                         <!-- frameType dropdown-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="category">Frame type ID<span class="text-danger">
@@ -347,10 +379,111 @@
                                             </div>
                                         </div>
 
+
+                                        <!--Material list transfer datalist component-->
+
+
+
+
+
+
+                                        <!--material cost field-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="materialcost">Material Cost<span class="text-danger">
+                                                        *</span></span>
+                                                <input type="text" class="form-control" placeholder="" required>
+                                            </div>
+                                        </div>
+
+                                        <!--ROP filed-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;" id="image">Reorder
+                                                    point<span class="text-danger">
+                                                        *</span></span>
+
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Select ROP</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <!--reorder quantity filed-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;" id="image">Reorder
+                                                    Quantity<span class="text-danger">
+                                                        *</span></span>
+
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Select ROQ</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+
+                                        <!--production cost field-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="productioncost">Production Cost<span class="text-danger">
+                                                        *</span></span>
+                                                <input type="text" class="form-control" placeholder="" required>
+                                            </div>
+                                        </div>
+
+
+                                        <!--profit rate field-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="profitrate">Profit Rate<span class="text-danger">
+                                                        *</span></span>
+                                                <input type="text" class="form-control" placeholder="" required>
+                                            </div>
+                                        </div>
+
+
+                                        <!--selling price field-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="sellingprice">Selling Price<span class="text-danger">
+                                                        *</span></span>
+                                                <input type="text" class="form-control" placeholder="" required>
+                                            </div>
+                                        </div>
+
+
+
                                         <!-- stauts radiobutton-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="status">Status<span class="text-danger">
@@ -360,42 +493,33 @@
                                                     <input class="form-check-input m-2" type="radio"
                                                         name="flexRadioDefault" id="flexRadioDefault2" checked>
                                                     <label class="form-check-label" for="flexRadioDefault2">
-                                                        Company Design
+                                                        In Stock
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input m-2" type="radio"
                                                         name="flexRadioDefault" id="flexRadioDefault2">
                                                     <label class="form-check-label" for="flexRadioDefault2">
-                                                        Customer Design
+                                                        Out of Stock
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
 
 
-                                        <!-- orientation radiobutton-->
+                                        <!-- notes textarea-->
                                         <div class="row mt-3">
                                             <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
+                                                <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageOrientation">Orientation<span class="text-danger">
+                                                    id="imageOrientation">Notes<span class="text-danger">
                                                         *</span></span>
 
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio" name="orientation"
-                                                        id="portrait" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Portrait
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio" name="orientation"
-                                                        id="landscape">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Landscape
-                                                    </label>
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                                        id="floatingTextarea"></textarea>
+                                                    <label for="floatingTextarea"></label>
                                                 </div>
                                             </div>
                                         </div>
