@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title logo-->
+    <link rel="icon" href="../images/Logo.png">
+    <title>Purchase Request | Ceylon Walls</title>
+
+    <!--my css file-->
+    <link href="systemCss.css" rel="stylesheet">
+    </link>
+
+    <!--Link b5 css file-->
+    <link rel="stylesheet" href="../../Resources/bootstrap/css/bootstrap.min.css">
+
+    <!--Link b5 js file-->
+    <script src="../../Resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!--link font awesome css file-->
+    <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
+
+    <style>
+        .scrollable-card {
+            height: 500px;
+            /* Set the desired height */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+    <!-- NAVIGATION OFFCANVAS -->
+
+    <div class="row header">
+        <div class="col-4 p-4 ">
+
+            <button class="btn fa fa-2x" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                    class="fa-solid fa-bars" style="color: #ffffff;"></i>
+            </button>
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="dashboard.html" class="d-block"><i class="fa-solid fa-house"
+                                    style="color: #ffffff;"></i> Dashboard</a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#salesmenue"
+                                aria-expanded="false" aria-controls="salesmenue"><i
+                                    class="fa-solid fa-money-bill-trend-up" style="color: #ffffff;"></i> Sales</a>
+                            <ul class="collapse list-unstyled" id="salesmenue">
+                                <li><a href="#webdesign" class="d-block">Invoice</a></li>
+                                <li><a href="#seo" class="d-block">Customer payments</a></li>
+                                <li><a href="#marketing" class="d-block">Customers</a></li>
+                                <li><a href="#marketing" class="d-block">Delivery</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#inventorymenu"
+                                aria-expanded="false" aria-controls="inventorymenu"><i class="fa-solid fa-cubes-stacked"
+                                    style="color: #ffffff;"></i> Inventory</a>
+                            <ul class="collapse list-unstyled" id="inventorymenu">
+                                <li><a href="#webdesign" class="d-block">Designs</a></li>
+                                <li><a href="#webdesign" class="d-block">Product Management</a></li>
+                                <li><a href="#seo" class="d-block">Production Inventory</a></li>
+                                <li><a href="#marketing" class="d-block">Material Management</a></li>
+                                <li><a href="#marketing" class="d-block">Material Inventory</a></li>
+                                <li><a href="#home" class="d-block">Production Order</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#productionmenu"
+                                aria-expanded="false" aria-controls="productionmenu"><i
+                                    class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Production</a>
+                            <ul class="collapse list-unstyled" id="productionmenu">
+                                <li><a href="production order management.html" class="d-block">Production Order
+                                        management</a></li>
+                                <li><a href="production order confirmation.html" class="d-block">Production Order
+                                        Confirmation</a></li>
+                                <li><a href="production.html" class="d-block">Production</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#purchasemenu"
+                                aria-expanded="false" aria-controls="purchasemenu"><i class="fa-solid fa-cart-shopping"
+                                    style="color: #ffffff;"></i> Purchase</a>
+                            <ul class="collapse list-unstyled" id="purchasemenu">
+                                <li><a href="#webdesign" class="d-block">Suppliers</a></li>
+                                <li><a href="#seo" class="d-block">Purchase request</a></li>
+                                <li><a href="#marketing" class="d-block">Goods Received Note</a></li>
+                                <li><a href="#marketing" class="d-block">Supplier Payments</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#adminmenu"
+                                aria-expanded="false" aria-controls="adminmenu"><i class="fa-solid fa-user-tie"
+                                    style="color: #ffffff;"></i> Administration</a>
+                            <ul class="collapse list-unstyled" id="adminmenu">
+                                <li><a href="employee.html" class="d-block">Employees</a></li>
+                                <li><a href="users.html" class="d-block">Users</a></li>
+                                <li><a href="previleges.html" class="d-block">Previleges</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#reportsmenu"
+                                aria-expanded="false" aria-controls="reportsmenu"><i class="fa-solid fa-chart-line"
+                                    style="color: #ffffff;"></i> Reports</a>
+                            <ul class="collapse list-unstyled" id="reportsmenu">
+                                <li><a href="#webdesign" class="d-block">Expenses</a></li>
+                                <li><a href="#seo" class="d-block">Income</a></li>
+                                <li><a href="#marketing" class="d-block">Profit</a></li>
+                                <li><a href="#marketing" class="d-block">Sales</a></li>
+                                <li><a href="#marketing" class="d-block">Inventory purchase</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--TITLE-->
+        <div class="col-8 p-4">
+            <div class="row">
+                <div class="col-1 text-end">
+                    <i class="fa-solid fa-comment-dots fa-bounce fa-2x" style="color: #ffffff;"></i>
+                </div>
+                <div class="col-11">
+                    <h2 style="color: #ffffff;">Purchase Request</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--TABLE SECTION-->
+    <div class="row mt-5">
+        <div class="col-12">
+
+            <!--ADD BUTTON-->
+            <div class="row text-end">
+                <div class="col-8"></div>
+                <div class="col-4">
+                    <button class="btn" style="color: #005eff;" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                            class="fa-regular fa-square-plus" style="color: #005eff;"></i> <b>New</b></button>
+                    <button type="button" class="btn"><i class="fa-solid fa-print" style="color: #000000;"></i><b>
+                            Print</b></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body ">
+                    <table id="tableUsers" class="table table-striped table-hover ">
+                        <thead class="table-dark text-start">
+                            <tr>
+                                <th>Pur_Req_ID</th>
+                                <th>Pur_Order No</th>
+                                <th>Supplier ID</th>
+                                <th>Material List</th>
+                                <th>Total Bill</th>
+                                <th>Status</th>
+                                <th>Required Date </th>
+                                <th>Notes</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+
+
+                                <td><button type="button" class="btn btn-primary  btn-sm rounded-5"
+                                        data-bs-toggle="modal" data-bs-target="#materialsModal">View</button>
+
+                                    <!--Material List Modal -->
+                                    <div class="modal fade modal-lg" id="materialsModal" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="materialsModal">Material List</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-hover">
+                                                        <tr>
+                                                            <th>Material ID</th>
+                                                            <th>Quantity</th>
+                                                            <th>Purchase Price</th>
+                                                            <th>Line total</th>
+                                                        </tr>
+                                                        <tr>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                                <td>
+                                    <button class="options-btn"><i class="fa-solid fa-eye"
+                                            style="color: #071731;"></i></button>
+                                    <button class="options-btn"><i class="fa-solid fa-pen-to-square"
+                                            style="color: #089131;"></i></button>
+                                    <button class="options-btn"><i class="fa-solid fa-trash-can"
+                                            style="color: #fd0d0d;"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--FORM SECTION-->
+
+    <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-1"></div>
+
+                <div class="col-10">
+                    <div class="card">
+                        <img src="../images/bg.png" class="card-img" alt="Background Image">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <div class="card-body scrollable-card">
+
+                                <!--required mark-->
+                                <div class="row">
+                                    <div class="col-12 fw-bold text-end">
+                                        <p><span class="text-danger">*</span>Required</p>
+                                    </div>
+                                </div>
+
+                                <form action="">
+
+                                                                   <!--purchase request ID filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="designCode">Request ID</span>
+                                            <input type="text" class="form-control" disabled>
+                                        </div>
+                                    </div>
+
+
+                                    <!--product name field-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;" id="imageName">Order
+                                                No<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="text" class="form-control" placeholder="Type Design Name..."
+                                                disabled>
+                                        </div>
+                                    </div>
+
+
+                                    <!--supplier id filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;" id="image">Supplier
+                                                ID<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="text" class="form-control" disabled>
+                                        </div>
+                                    </div>
+
+
+                                    <!--Material list transfer datalist component-->
+
+
+
+                                    <!-- Total bill -->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;" id="category">Frame
+                                                size ID<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="text" class="form-control" placeholder="" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- stauts radiobutton-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="status">Status<span class="text-danger">
+                                                    *</span></span>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input m-2" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Pending
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input m-2" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Completed
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--required_date filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="confirmation">Required Date<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+
+
+                                    <!-- notes textarea-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="imageOrientation">Notes<span class="text-danger">
+                                                    *</span></span>
+
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="Leave a comment here"
+                                                    id="floatingTextarea"></textarea>
+                                                <label for="floatingTextarea"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--create user and clear button-->
+                                    <div class="row mt-5">
+                                        <div class="col-6 text-start">
+                                            <button type="reset" id="submit" value="Clear" class="btn btn-secondary"><i
+                                                    class="fa-solid fa-eraser" style="color: #ffffff;"></i>
+                                                Clear</button>
+                                        </div>
+
+                                        <div class="col-6 text-start">
+                                            <button type="submit" id="submit" value="Add Employee"
+                                                class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                    style="color: #ffffff;"></i> Add</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
