@@ -72,18 +72,20 @@
                                 <li><a href="product management.html" class="d-block">Products</a></li>
                                 <li><a href="product inventory.html" class="d-block">Product Inventory</a></li>
                                 <li><a href="material management.html" class="d-block">Material Management</a></li>
-                                                           </ul>
+                            </ul>
                         </li>
                         <hr>
                         <li>
                             <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#productionmenu"
-                                aria-expanded="false" aria-controls="productionmenu"><i class="fa-solid fa-cart-shopping"
-                                    style="color: #ffffff;"></i> Production</a>
+                                aria-expanded="false" aria-controls="productionmenu"><i
+                                    class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Production</a>
                             <ul class="collapse list-unstyled" id="purchasemenu">
-                                <li><a href="production order management.html" class="d-block">Production Order management</a></li>
-                                <li><a href="production order confirmation.html" class="d-block">Production Order Confirmation</a></li>
+                                <li><a href="production order management.html" class="d-block">Production Order
+                                        management</a></li>
+                                <li><a href="production order confirmation.html" class="d-block">Production Order
+                                        Confirmation</a></li>
                                 <li><a href="production.html" class="d-block">Production</a></li>
-                                                           </ul>
+                            </ul>
                         </li>
                         <hr>
                         <li>
@@ -225,9 +227,7 @@
                                         </div>
                                     </div>
 
-                                    <form action="">
-
-
+                                    <form action="" class="needs-validation" novalidate method="post">
 
                                         <!--design code filed-->
                                         <div class="row mt-3">
@@ -235,22 +235,22 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="designCode">Design code</span>
-                                                <input type="text" class="form-control" 
-                                                    disabled>
+                                                    id="labelDesignCode">Design code</span>
+                                                <input type="text" class="form-control" id="textDesignCode" disabled>
                                             </div>
                                         </div>
 
 
-                                        <!--photo filed-->
+                                        <!--photo -->
                                         <div class="row mt-3">
                                             <div class="input-group">
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="image">Image<span class="text-danger">
+                                                    id="labelImage">Image<span class="text-danger">
                                                         *</span></span>
-                                                <input type="file" class="form-control" required>
+                                                <input type="file" class="form-control" id="fileImage" required>
+                                                <div class="invalid-feedback"> Please upload Image.</div>
                                             </div>
                                         </div>
 
@@ -261,10 +261,11 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageName">Image Name<span class="text-danger">
+                                                    id="labelImageName">Image Name<span class="text-danger">
                                                         *</span></span>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control" id="textImageName"
                                                     placeholder="Type Design Name..." required>
+                                                <div class="invalid-feedback"> Please type Image Name.</div>
                                             </div>
                                         </div>
 
@@ -280,39 +281,37 @@
 
                                                 <input class="form-control" list="datalistOptions" id="exampleDataList"
                                                     placeholder="Type to search...">
+                                                <div class="invalid-feedback"> Please type Image Name.</div>
                                                 <datalist id="datalistOptions">
-                                                    <option value="Boho Art">
-                                                    <option value="Psydelic Art">
-                                                    <option value="Religious Art - Buddhist">
-                                                    <option value="Religious Art - Catholic">
-                                                    <option value="Floral Art">
+                                                    <option value="">
+                                                    <option value="">
                                                 </datalist>
+
                                             </div>
                                         </div>
 
-                                        <!-- stauts radiobutton-->
+                                        <!-- design  radiobutton-->
                                         <div class="row mt-3">
                                             <div class="input-group">
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="status">Status<span class="text-danger">
+                                                    id="status">Type<span class="text-danger">
                                                         *</span></span>
 
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio"
-                                                        name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Company Design
-                                                    </label>
+                                                <div class="form-check form-check-inline m-2">
+                                                    <input class="form-check-input" type="radio" name="radioDesignType"
+                                                        id="radioCompanyDesign" value="single" checked>
+                                                    <label class="form-check-label" for="radioCompanyDesign">Company
+                                                        Design</label>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio"
-                                                        name="flexRadioDefault" id="flexRadioDefault2">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Customer Design
-                                                    </label>
+                                                <div class="form-check form-check-inline m-2">
+                                                    <input class="form-check-input" type="radio" name="radioDesignType"
+                                                        id="radioCustomerDesign" value="married">
+                                                    <label class="form-check-label" for="radioCustomerDesign">Customer
+                                                        Design</label>
                                                 </div>
+                                                <div class="invalid-feedback"> Please select Design type.</div>
                                             </div>
                                         </div>
 
@@ -325,20 +324,18 @@
                                                     id="imageOrientation">Orientation<span class="text-danger">
                                                         *</span></span>
 
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio" name="orientation"
-                                                        id="portrait" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Portrait
-                                                    </label>
+                                                <div class="form-check form-check-inline m-2">
+                                                    <input class="form-check-input" type="radio" name="radioOrientation"
+                                                        id="radioPortrait" value="single" checked>
+                                                    <label class="form-check-label" for="radioPortrait">Portrait</label>
                                                 </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio" name="orientation"
-                                                        id="landscape">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Landscape
-                                                    </label>
+                                                <div class="form-check form-check-inline m-2">
+                                                    <input class="form-check-input" type="radio" name="radioOrientation"
+                                                        id="radioLandscape" value="married">
+                                                    <label class="form-check-label" for="radioLandscape">Customer
+                                                        Design</label>
                                                 </div>
+                                                <div class="invalid-feedback"> Please select Design type.</div>
                                             </div>
                                         </div>
 
@@ -367,6 +364,7 @@
             </div>
         </div>
     </div>
+    <script src="validation.js"></script>
 </body>
 
 </html>
