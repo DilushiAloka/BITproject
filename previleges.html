@@ -21,6 +21,15 @@
 
     <!--link font awesome css file-->
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
+
+    <style>
+        .scrollable-card {
+            height: 500px;
+            /* Set the desired height */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+    </style>
 </head>
 
 
@@ -206,7 +215,7 @@
                         <div class="card">
                             <img src="../images/bg.png" class="card-img" alt="Background Image">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="card-body">
+                                <div class="card-body scrollable-card">
 
                                     <!--required mark-->
                                     <div class="row">
@@ -215,28 +224,21 @@
                                         </div>
                                     </div>
 
-                                    <form action="">
+                                    <form action="" class="needs-validation" novalidate method="post">
+
+
                                         <!--roles dropdown-->
                                         <div class="row">
                                             <div class="input-group">
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="roles">Roles<span class="text-danger"> *</span></span>
-                                                    <div class="dropdown">
-                                                        <button class="btn  form-control dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                                          Select Role
-                                                        </button>
-                                                        
-                                                    <ul class="dropdown-menu">
-                                                        <li><button class="dropdown-item" type="button">Owner</button>
-                                                        </li>
-                                                        <li><button class="dropdown-item" type="button">Sales
-                                                                Manager</button>
-                                                        </li>
-                                                        <li><button class="dropdown-item" type="button">Cashier</button>
-                                                        </li>
-                                                    </ul>
+                                                    id="labelRoles">Roles<span class="text-danger"> *</span></span>
+                                                <select class="form-select" id="selectRoles" required>
+                                                    <option value="" disabled selected>Select a Role</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please select a role.
                                                 </div>
                                             </div>
                                         </div>
@@ -250,15 +252,14 @@
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="modules">Modules<span class="text-danger">
                                                         *</span></span>
-
-
-                                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                                <input class="form-control" list="datalistOptions" id="datalistModules"
                                                     placeholder="Type to search...">
                                                 <datalist id="datalistOptions">
-                                                    <option value="Designs">
-                                                    <option value="product management">
-                                                    <option value="inventory">
+                                                    <option value=""></option>
                                                 </datalist>
+                                                <div class="invalid-feedback">
+                                                    Please select s module.
+                                                </div>
                                             </div>
                                         </div>
 
@@ -269,14 +270,14 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="insert">Insert<span class="text-danger">
+                                                    id="labelInsert">Insert<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check form-switch m-2">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckChecked" checked>
+                                                        id="switchInsertActive" checked>
                                                     <label class="form-check-label"
-                                                        for="flexSwitchCheckChecked">Active</label>
+                                                        for="switchInsertActive">Active</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -286,14 +287,14 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="update">Update<span class="text-danger">
+                                                    id="labelUpdate">Update<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check form-switch m-2">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckChecked" checked>
+                                                        id="switchUpdateActive" checked>
                                                     <label class="form-check-label"
-                                                        for="flexSwitchCheckChecked">Active</label>
+                                                        for="switchUpdateActive">Active</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -303,14 +304,14 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="delete">Delete<span class="text-danger">
+                                                    id="labelDelete">Delete<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check form-switch m-2">
                                                     <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckChecked" checked>
+                                                        id="switchDeleteActive" checked>
                                                     <label class="form-check-label"
-                                                        for="flexSwitchCheckChecked">Active</label>
+                                                        for="switchDeleteActive">Active</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -328,10 +329,18 @@
                                                 <button type="submit" id="submit" value="save"
                                                     class="btn btn-success"><i class="fa-solid fa-user-plus"
                                                         style="color: #ffffff;"></i> Save</button>
-
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="validation.js"></script>
+</body>
+
+</html>

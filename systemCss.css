@@ -1,63 +1,144 @@
 body {
-    background-image: url('../images/bg.png'); /* Replace with your image URL */
-    background-size: cover; /* Make the image cover the entire background */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Make the background image fixed */
-    color: #fff; /* White text */
-  }
+  background-image: url('../images/bg.png');
+  /* Replace with your image URL */
+  background-size: cover;
+  /* Make the image cover the entire background */
+  background-repeat: no-repeat;
+  /* Prevent the image from repeating */
+  background-attachment: fixed;
+  /* Make the background image fixed */
+  color: #fff;
+  /* White text */
+}
+
 .header {
-    background-color:#343a40;
+  background-color: #343a40;
 }
 
 /*OFF CANVAS*/
-.offcanvas-header{
-    background-color: #343a40;
-    color: white;
-    
-}
-.offcanvas-body{
-    background-color: #343a40;
-    color: white;
-    
+.offcanvas-header {
+  background-color: #343a40;
+  color: white;
+
 }
 
-#offcanvasRight{
+.offcanvas-body {
+  background-color: #343a40;
+  color: white;
+
+}
+
+#offcanvasRight {
   padding: 0;
 }
+
 .offcanvas-title {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.list-unstyled > li > a {
-    display: block;
-    padding: 10px 15px;
-    color: #ffffff;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .list-unstyled > li > a:hover {
-    background-color: #9b9c9da0;
-    color: #fff;
-  }
-  .collapse > li > a {
-    padding-left: 30px;}
+.list-unstyled>li>a {
+  display: block;
+  padding: 10px 15px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-    /*option buttons on table*/
-    .options-btn {
-        visibility: hidden; 
-        border: none;
-      }
-      tr:hover .options-btn {
-        visibility: visible;
-      }
+.list-unstyled>li>a:hover {
+  background-color: #9b9c9da0;
+  color: #fff;
+}
 
+.collapse>li>a {
+  padding-left: 30px;
+}
 
-      .card-img {
-        height: 500px;
-        object-fit: cover;
-        opacity: 0.5;
-    }
-     
+/*option buttons on table*/
+.options-btn {
+  visibility: hidden;
+  border: none;
+}
+
+tr:hover .options-btn {
+  visibility: visible;
+}
 
 
-    
+.card-img {
+  height: 500px;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+
+/*component transfer list*/
+
+.transfer-list {
+  min-height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: none;
+}
+
+.side {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.box {
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.box:hover {
+  background-color: #f5f6f6;
+}
+
+.box input {
+  width: 17px;
+  height: 17px;
+}
+
+.box label {
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.mid-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mid-side * {
+  padding: 5px;
+  border-radius: 30%;
+  width: 50px;
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mid-side *:hover {
+  background-color: #000000;
+  color: #ffffff;
+}

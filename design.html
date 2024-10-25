@@ -21,6 +21,17 @@
 
     <!--link font awesome css file-->
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
+
+
+    <style>
+        .scrollable-card {
+            height: 500px;
+            /* Set the desired height */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+    </style>
+    
 </head>
 
 
@@ -218,7 +229,7 @@
                         <div class="card">
                             <img src="../images/bg.png" class="card-img" alt="Background Image">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="card-body">
+                                <div class="card-body scrollable-card">
 
                                     <!--required mark-->
                                     <div class="row">
@@ -236,7 +247,7 @@
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="labelDesignCode">Design code</span>
-                                                <input type="text" class="form-control" id="textDesignCode" disabled>
+                                                <input type="text" class="form-control" id="textDesignCode" readonly>
                                             </div>
                                         </div>
 
@@ -277,7 +288,6 @@
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="category">Category<span class="text-danger">
                                                         *</span></span>
-
 
                                                 <input class="form-control" list="datalistOptions" id="exampleDataList"
                                                     placeholder="Type to search...">
@@ -343,13 +353,13 @@
                                         <!--create user and clear button-->
                                         <div class="row mt-5">
                                             <div class="col-6 text-start">
-                                                <button type="reset" id="submit" value="Clear"
+                                                <button type="reset" id="buttonClear" value="Clear"
                                                     class="btn btn-secondary"><i class="fa-solid fa-eraser"
                                                         style="color: #ffffff;"></i> Clear</button>
                                             </div>
 
                                             <div class="col-6 text-start">
-                                                <button type="submit" id="submit" value="Add Employee"
+                                                <button type="submit" id="buttonSubmit" value="Add Employee"
                                                     class="btn btn-success"><i class="fa-solid fa-user-plus"
                                                         style="color: #ffffff;"></i> Add</button>
 

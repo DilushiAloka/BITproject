@@ -21,7 +21,7 @@
 /*********************************************************************************************************************** */
 
 
-//CALLING NAME
+//CALLING NAME - EMPLOYEE FORM
 
 textFullName.onchange = () => {
     console.log(textFullName.value);

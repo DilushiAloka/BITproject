@@ -21,6 +21,15 @@
 
     <!--link font awesome css file-->
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
+
+    <style>
+        .scrollable-card {
+            height: 500px;
+            /* Set the desired height */
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+    </style>
 </head>
 
 
@@ -220,7 +229,7 @@
                         <div class="card">
                             <img src="../images/bg.png" class="card-img" alt="Background Image">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="card-body">
+                                <div class="card-body scrollable-card">
 
                                     <!--required mark-->
                                     <div class="row">
@@ -229,8 +238,7 @@
                                         </div>
                                     </div>
 
-                                    <form action="">
-
+                                    <form action="" class="needs-validation" novalidate method="post">
 
 
                                         <!--inventory id filed-->
@@ -239,10 +247,12 @@
                                                 <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="inventoryid">Inventory ID</span>
-                                                <input type="text" class="form-control" disabled>
+                                                    id="labelInventoryId">Inventory ID</span>
+                                                <input type="text" class="form-control" id="textInventoryID" readonly
+                                                    required>
                                             </div>
                                         </div>
+
 
                                         <!--product id filed-->
                                         <div class="row mt-3">
@@ -250,8 +260,9 @@
                                                 <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="productid">Product ID</span>
-                                                <input type="text" class="form-control" disabled>
+                                                    id="labelProductId">Product ID</span>
+                                                <input type="text" class="form-control" id="textProductId" readonly
+                                                    required>
                                             </div>
                                         </div>
 
@@ -262,59 +273,53 @@
                                                 <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="image">Available Quantity<span class="text-danger">
+                                                    id="labelAvailable Quantity">Available Quantity<span
+                                                        class="text-danger">
                                                         *</span></span>
-
-                                                <select id="numbers1" class="form-control"></select>
-
-                                                <script>
-                                                    const select1 = document.getElementById('numbers1');
-                                                    for (let i = 1; i <= 50; i++) {
-                                                        const option = document.createElement('option');
-                                                        option.value = i;
-                                                        option.text = i;
-                                                        select1.appendChild(option);
-                                                    }
-                                                </script>
+                                                <select id="selectAvailableQuantity" class="form-control" required>
+                                                    <option value="" disabled selected>Select Available Quantity
+                                                    </option>
+                                                </select>
+                                                <div class="invalid-feedback"> Select Available Quantity</div>
                                             </div>
                                         </div>
 
-                                        <!--total quantity filed-->
+
+                                        <!--total quantity -->
                                         <div class="row mt-3">
                                             <div class="input-group">
                                                 <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="totalqty">Total Quantity<span class="text-danger">
+                                                    id="labelTotalQuantity">Total Quantity<span class="text-danger">
                                                         *</span></span>
-
-                                                        <input type="text" class="form-control" required>
-                                                    </div>
+                                                <input type="text" class="form-control" required readonly>
+                                            </div>
                                         </div>
 
-                                              
+
                                         <!-- stauts radiobutton-->
                                         <div class="row mt-3">
                                             <div class="input-group">
                                                 <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="status">Status<span class="text-danger">
+                                                    id="labelStatus">Status<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check">
-                                                    <input class="form-check-input m-1" type="radio"
-                                                        name="flexRadioDefault" id="in stock" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                        id="radioInStock" checked>
+                                                    <label class="form-check-label" for="radioInStock">
                                                         In Stock
                                                     </label>
                                                 </div>
-                                              
+
                                                 <div class="form-check">
-                                                    <input class="form-check-input m-1" type="radio"
-                                                        name="flexRadioDefault" id="out of stock">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                       Out of Stock
+                                                    <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                        id="radioOutOfStock">
+                                                    <label class="form-check-label" for="radioOutOfStock">
+                                                        Out of Stock
                                                     </label>
                                                 </div>
                                             </div>
@@ -326,13 +331,11 @@
                                                 <span class="input-group-text col-4 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageOrientation">Notes<span class="text-danger">
+                                                    id="labelNotes">Notes<span class="text-danger">
                                                         *</span></span>
-
-                                                        <div class="form-floating">
-                                                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                                            <label for="floatingTextarea"></label>
-                                                          </div>
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" id="textareaNotes"></textarea>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -340,13 +343,13 @@
                                         <!--create user and clear button-->
                                         <div class="row mt-5">
                                             <div class="col-6 text-start">
-                                                <button type="reset" id="submit" value="Clear"
+                                                <button type="reset" id="buttonClear" value="Clear"
                                                     class="btn btn-secondary"><i class="fa-solid fa-eraser"
                                                         style="color: #ffffff;"></i> Clear</button>
                                             </div>
 
                                             <div class="col-6 text-start">
-                                                <button type="submit" id="submit" value="Add Employee"
+                                                <button type="submit" id="buttonSubmit" value="Add Employee"
                                                     class="btn btn-success"><i class="fa-solid fa-user-plus"
                                                         style="color: #ffffff;"></i> Add</button>
 
@@ -361,6 +364,7 @@
             </div>
         </div>
     </div>
+    <script src="validation.js"></script>
 </body>
 
 </html>
