@@ -210,140 +210,175 @@
                                             </div>
                                         </div>
                                     </div>
-                              </td>
+                                </td>
 
-                <td></td>
-                <td></td>
+                                <td></td>
+                                <td></td>
 
-                <td>
-                    <button class="options-btn"><i class="fa-solid fa-eye" style="color: #071731;"></i></button>
-                    <button class="options-btn"><i class="fa-solid fa-pen-to-square"
-                            style="color: #089131;"></i></button>
-                    <button class="options-btn"><i class="fa-solid fa-trash-can" style="color: #fd0d0d;"></i></button>
-                </td>
-                </tr>
-                </tbody>
-                </table>
+                                <td>
+                                    <button class="options-btn"><i class="fa-solid fa-eye"
+                                            style="color: #071731;"></i></button>
+                                    <button class="options-btn"><i class="fa-solid fa-pen-to-square"
+                                            style="color: #089131;"></i></button>
+                                    <button class="options-btn"><i class="fa-solid fa-trash-can"
+                                            style="color: #fd0d0d;"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
+                </div>
             </div>
-        </div>
-        <div class="col-2"></div>
-    </div>
-
-
-
-
-    <!--FORM SECTION-->
-
-    <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
+            <div class="col-2"></div>
         </div>
 
-        <div class="offcanvas-body">
-            <div class="row">
-                <div class="col-1"></div>
 
-                <div class="col-10">
-                    <div class="card">
-                        <img src="../images/bg.png" class="card-img" alt="Background Image">
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                            <div class="card-body">
 
-                                <!--required mark-->
-                                <div class="row">
-                                    <div class="col-12 fw-bold text-end">
-                                        <p><span class="text-danger">*</span>Required</p>
+
+        <!--FORM SECTION-->
+
+        <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <div class="row">
+                    <div class="col-1"></div>
+
+                    <div class="col-10">
+                        <div class="card">
+                            <img src="../images/bg.png" class="card-img" alt="Background Image">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <div class="card-body">
+
+                                    <!--required mark-->
+                                    <div class="row">
+                                        <div class="col-12 fw-bold text-end">
+                                            <p><span class="text-danger">*</span>Required</p>
+                                        </div>
                                     </div>
+
+                                    <form action="" class="needs-validation" novalidate method="post">
+
+
+                                        <!-- order confirmation id filed-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="labelOrderConfirmationId">Confirmation ID</span>
+                                                <input type="text" class="form-control" id="textOrderConfirmationId"
+                                                    readonly>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- production id filed-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="labelProductionId">Production ID</span>
+                                                <input type="text" class="form-control" id="textProductionId" readonly>
+                                            </div>
+                                        </div>
+
+
+                                        <!--GRN Material list transfer datalist component-->
+
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="labelMaterialList"> Material List<span class="text-danger">
+                                                        *</span></span>
+                                            </div>
+                                            <div class="container transfer-list mt-2">
+                                                <div class="side left-side" id="leftSide">
+                                                    <!-- Items will be added dynamically here -->
+                                                </div>
+                                                <div class="mid-side">
+                                                    <button class="all-to-right">>></button>
+                                                    <button class="checked-to-right">></button>
+                                                    <button class="checked-to-left">
+                                                        << </button>
+                                                            <button class="all-to-left">
+                                                                << </button>
+                                                </div>
+                                                <div class="side right-side" id="rightSide">
+                                                    <!-- Items will be added dynamically here -->
+                                                </div>
+                                                <div class="invalid-feedback"> Please select at least one material.
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- stauts radiobutton-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="labelStatus">Status<span class="text-danger">
+                                                        *</span></span>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                        id="radioPending" checked>
+                                                    <label class="form-check-label" for="radioPending">
+                                                        Pending
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                        id="radioConfirmed">
+                                                    <label class="form-check-label" for="radioConfirmed">
+                                                        Confirmed
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!--confirmation date-->
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="labelConfirmationDate">Confirmed Date<span class="text-danger">
+                                                        *</span></span>
+                                                <input type="date" class="form-control" id="textConfirmationDate" required>
+                                            </div>
+                                        </div>
+
+
+                                        <!--create user and clear button-->
+                                        <div class="row mt-5">
+                                            <div class="col-6 text-start">
+                                                <button type="reset" id="buttonClear" value="Clear"
+                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                        style="color: #ffffff;"></i>
+                                                    Clear</button>
+                                            </div>
+
+                                            <div class="col-6 text-start">
+                                                <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                        style="color: #ffffff;"></i> Add</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-
-                                <form action="">
-
-                                    <!-- order confirmation id filed-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="orderconfirmationid">Confirmation ID</span>
-                                            <input type="text" class="form-control" disabled>
-                                        </div>
-                                    </div>
-
-                                    <!-- production id filed-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="productionid">Production ID</span>
-                                            <input type="text" class="form-control" disabled>
-                                        </div>
-                                    </div>
-
-
-                                   <!--transfer list component for material list-->
-                                    
-
-
-                                   
-                                    <!-- stauts radiobutton-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="status">Status<span class="text-danger">
-                                                    *</span></span>
-
-                                            <div class="form-check">
-                                                <input class="form-check-input m-1" type="radio" name="status"
-                                                    id="in progress" checked>
-                                                <label class="form-check-label" for="flexRadioDefault2">
-                                                   Pending
-                                                </label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <input class="form-check-input m-1" type="radio" name="status"
-                                                    id="Completed">
-                                                <label class="form-check-label" for="flexRadioDefault2">
-                                                   Confirmed
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                   
-                                    <!--confirmation filed-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="confirmation">Confirmed Date<span class="text-danger">
-                                                    *</span></span>
-                                            <input type="date" class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <!--create user and clear button-->
-                                    <div class="row mt-5">
-                                        <div class="col-6 text-start">
-                                            <button type="reset" id="submit" value="Clear" class="btn btn-secondary"><i
-                                                    class="fa-solid fa-eraser" style="color: #ffffff;"></i>
-                                                Clear</button>
-                                        </div>
-
-                                        <div class="col-6 text-start">
-                                            <button type="submit" id="submit" value="Add Employee"
-                                                class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                    style="color: #ffffff;"></i> Add</button>
-
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -351,7 +386,7 @@
             </div>
         </div>
     </div>
-    </div>
+    <script src="mainjsfile.js"></script>
 </body>
 
 </html>

@@ -178,7 +178,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                                  
+
                                 <td>
                                     <button class="options-btn"><i class="fa-solid fa-eye"
                                             style="color: #071731;"></i></button>
@@ -223,8 +223,7 @@
                                         </div>
                                     </div>
 
-                                    <form action="">
-
+                                    <form action="" class="needs-validation" novalidate method="post">
 
 
                                         <!--production id filed-->
@@ -233,8 +232,8 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="productionid">Production ID</span>
-                                                <input type="text" class="form-control" disabled>
+                                                    id="labelProductionId">Production ID</span>
+                                                <input type="text" class="form-control" id="textProductionId" readonly>
                                             </div>
                                         </div>
 
@@ -244,10 +243,12 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="productionorderid">Pro Order ID</span>
-                                                <input type="text" class="form-control" disabled>
+                                                    id="labelProductionOrderId">Pro Order ID</span>
+                                                <input type="text" class="form-control" id="textProductionOrderId"
+                                                    readonly>
                                             </div>
                                         </div>
+
 
                                         <!--production id filed-->
                                         <div class="row mt-3">
@@ -255,42 +256,39 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="productid">Product ID</span>
-                                                <input type="text" class="form-control" disabled>
+                                                    id="labelProductionId">Product ID</span>
+                                                <input type="text" class="form-control" id="textProductionId">
                                             </div>
                                         </div>
 
 
                                         <!--quantity field-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="materialcategory">Quantity<span class="text-danger">
-                                                    *</span></span>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Quantity</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                            </select>
+                                        <div class="row mt-3">
+                                            <div class="input-group">
+                                                <span class="input-group-text col-4 fw-bold"
+                                                    onClick=this.parentNode.children[1].focus();
+                                                    style="background-color:#343a40; color: #ffffff;"
+                                                    id="labelQuantity">Quantity<span class="text-danger">
+                                                        *</span></span>
+                                                <select class="form-select" id="selectQuality">
+                                                    <option selected>Select Quantity</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
+
 
                                         <!--create user and clear button-->
                                         <div class="row mt-5">
                                             <div class="col-6 text-start">
-                                                <button type="reset" id="submit" value="Clear"
+                                                <button type="reset" id="buttonClear" value="Clear"
                                                     class="btn btn-secondary"><i class="fa-solid fa-eraser"
                                                         style="color: #ffffff;"></i> Clear</button>
                                             </div>
 
                                             <div class="col-6 text-start">
-                                                <button type="submit" id="submit" value="Add Employee"
+                                                <button type="submit" id="buttonSubmit" value="Add Employee"
                                                     class="btn btn-success"><i class="fa-solid fa-user-plus"
                                                         style="color: #ffffff;"></i> Add</button>
-
                                             </div>
                                         </div>
                                     </form>
@@ -302,6 +300,7 @@
             </div>
         </div>
     </div>
+    <script src="mainjsfile.js"></script>
 </body>
 
 </html>

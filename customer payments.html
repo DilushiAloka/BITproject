@@ -204,189 +204,191 @@
         </div>
         <div class="col-1"></div>
     </div>
-    
 
-        <!--FORM SECTION-->
 
-        <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight"
-            aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
+    <!--FORM SECTION-->
 
-            <div class="offcanvas-body">
-                <div class="row">
-                    <div class="col-1"></div>
+    <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
 
-                    <div class="col-10">
-                        <div class="card">
-                            <img src="../images/bg.png" class="card-img" alt="Background Image">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="card-body scrollable-card">
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-1"></div>
 
-                                    <!--required mark-->
-                                    <div class="row">
-                                        <div class="col-12 fw-bold text-end">
-                                            <p><span class="text-danger">*</span>Required</p>
+                <div class="col-10">
+                    <div class="card">
+                        <img src="../images/bg.png" class="card-img" alt="Background Image">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                            <div class="card-body scrollable-card">
+
+                                <!--required mark-->
+                                <div class="row">
+                                    <div class="col-12 fw-bold text-end">
+                                        <p><span class="text-danger">*</span>Required</p>
+                                    </div>
+                                </div>
+
+                                <form action="" class="needs-validation" novalidate method="post">
+
+                                    <!--payment id -->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelPaymentId">Payment ID</span>
+                                            <input type="text" class="form-control" id="textPaymentId" readonly
+                                                required>
                                         </div>
                                     </div>
 
-                                    <form action="">
 
-                                        <!--payment id filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="designCode">Payment ID</span>
-                                                <input type="text" class="form-control" disabled>
-                                            </div>
+                                    <!--invoice no -->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelInvoiceNo">Invoice No</span>
+                                            <input type="text" class="form-control" id="textInvoiceNo" readonly
+                                                required>
                                         </div>
+                                    </div>
 
 
-                                        <!--invoice no filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="designCode">Invoice No</span>
-                                                <input type="text" class="form-control" disabled>
-                                            </div>
+                                    <!--customer id -->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelCustomerID">Customer ID</span>
+                                            <input type="text" class="form-control" id="textCustomerID" readonly
+                                                required>
                                         </div>
+                                    </div>
 
 
-                                        <!--customer id filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="designCode">Customer ID</span>
-                                                <input type="text" class="form-control" disabled>
-                                            </div>
+                                    <!--payment source -->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelPayementSource">Payment Source<span class="text-danger">
+                                                    *</span></span>
+                                            <select class="form-select" id="selectPaymentSource" required>
+                                                <option value="" selected disabled>Select Payment Source</option>
+                                            </select>
+                                            <div class="invalid-feedback"> Please select a payment source.</div>
                                         </div>
+                                    </div>
 
 
-                                        <!--payment source field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageName">Payment Source<span class="text-danger">
-                                                        *</span></span>
-                                                <select class="form-select" aria-label="Default select example"
-                                                    required>
-                                                    <option value="1">Courier Service</option>
-                                                    <option value="2">In House</option>
-                                                </select>
-                                            </div>
+
+                                    <!--payment method-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelPaymentMethod">Payment
+                                                Method<span class="text-danger">
+                                                    *</span></span>
+                                            <select class="form-select" id="selectPaymentMethod" required>
+                                                <option value="" selected disabled>Select Payment Method</option>
+                                            </select>
+                                            <div class="invalid-feedback"> Please select a payment method.</div>
                                         </div>
+                                    </div>
 
 
-
-                                        <!--payment method-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;" id="image">Payment
-                                                    Method<span class="text-danger">
-                                                        *</span></span>
-                                                <select class="form-select" aria-label="Default select example"
-                                                    required>
-                                                    <option value="1">Cash</option>
-                                                    <option value="2">Card</option>
-                                                </select>
-                                            </div>
+                                    <!--Total amount-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="textTotalAmount">Total
+                                                Amount<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="text" class="form-control" placeholder="Type Total Amount..."
+                                                required>
                                         </div>
+                                    </div>
 
 
-                                        <!--Total amount-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;" id="image">Total
-                                                    Amount<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" placeholder="" required>
-                                            </div>
+                                    <!--paid amount-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelPaidAmount">Paid
+                                                Amount<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="text" class="form-control" placeholder="Type Paid Amount..."
+                                                required id="textPaidAmount">
+                                            <div class="invalid-feedback"> Please type paid amount.</div>
                                         </div>
+                                    </div>
 
 
-                                        <!--paid amount-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;" id="image">Paid
-                                                    Amount<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" placeholder="" required>
-
-                                            </div>
+                                    <!--balance-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelBalance">Balance<span class="text-danger">
+                                                    *</span></span>
+                                            <input type="text" class="form-control" id="textBalance" required>
                                         </div>
+                                    </div>
 
 
-                                        <!--balance-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="productioncost">Balance<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" placeholder="" required>
-                                            </div>
+                                    <!-- notes textarea-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelNotes">Notes<span class="text-danger">
+                                                    *</span></span>
+                                            <textarea class="form-control" id="floatingTextarea"></textarea>
                                         </div>
+                                    </div>
+                            
 
 
-                                        <!-- notes textarea-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageOrientation">Notes<span class="text-danger">
-                                                        *</span></span>
+                            <!--create user and clear button-->
+                            <div class="row mt-5">
+                                <div class="col-6 text-start">
+                                    <button type="reset" id="buttonClear" value="Clear" class="btn btn-secondary"><i
+                                            class="fa-solid fa-eraser" style="color: #ffffff;"></i>
+                                        Clear</button>
+                                </div>
 
-                                                <div class="form-floating">
-                                                    <textarea class="form-control" placeholder="Leave a comment here"
-                                                        id="floatingTextarea"></textarea>
-                                                    <label for="floatingTextarea"></label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="col-6 text-start">
+                                    <button type="submit" id="buttonSubmit" value="Add Employee" class="btn btn-success"><i
+                                            class="fa-solid fa-user-plus" style="color: #ffffff;"></i> Add</button>
 
-
-                                        <!--create user and clear button-->
-                                        <div class="row mt-5">
-                                            <div class="col-6 text-start">
-                                                <button type="reset" id="submit" value="Clear"
-                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                        style="color: #ffffff;"></i> Clear</button>
-                                            </div>
-
-                                            <div class="col-6 text-start">
-                                                <button type="submit" id="submit" value="Add Employee"
-                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                        style="color: #ffffff;"></i> Add</button>
-
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
+    
+    <script src="mainjsfile.js"></script>
 </body>
 
 </html>

@@ -233,10 +233,12 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="productionorderid">Pro Order ID</span>
-                                                <input type="text" class="form-control" disabled>
+                                                    id="labelProductionorderId">Pro Order ID</span>
+                                                <input type="text" class="form-control" id="textProductionOrderId"
+                                                    readonly>
                                             </div>
                                         </div>
+
 
                                         <!--required date filed-->
                                         <div class="row mt-3">
@@ -244,8 +246,9 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="requireddate">Required Date</span>
-                                                <input type="date" class="form-control">
+                                                    id="labelRequiredDate">Required Date</span>
+                                                <input type="date" class="form-control" id="textRequiredDate" required>
+                                                <div class="invalid-feedback"> Please select required date.</div>
                                             </div>
                                         </div>
 
@@ -256,21 +259,21 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="ordertype">Order Type<span class="text-danger">
+                                                    id="labelOrderType">Order Type<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check">
                                                     <input class="form-check-input m-1" type="radio"
-                                                        name="ordertype" id="customer order" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        name="radioOrderType" id="radioCustomerOrder" checked>
+                                                    <label class="form-check-label" for="radioCustomerOrder">
                                                         Customer Order
                                                     </label>
                                                 </div>
 
                                                 <div class="form-check">
                                                     <input class="form-check-input m-1" type="radio"
-                                                        name="ordertype" id="in house order">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        name="radioOrderType" id="radioInHouseOrder">
+                                                    <label class="form-check-label" for="radioInHouseOrder">
                                                         In House Order
                                                     </label>
                                                 </div>
@@ -283,29 +286,22 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;"
-                                                    id="status">Status<span class="text-danger">
+                                                    id="labelStatus">Status<span class="text-danger">
                                                         *</span></span>
 
                                                 <div class="form-check">
-                                                    <input class="form-check-input m-1" type="radio"
-                                                        name="status" id="accepted" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                        id="radioAccepted" checked>
+                                                    <label class="form-check-label" for="radioAccepted">
                                                         Accepted
                                                     </label>
                                                 </div>
 
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-1" type="radio"
-                                                        name="status" id="in progress">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        In progress
-                                                    </label>
-                                                </div>
 
                                                 <div class="form-check">
-                                                    <input class="form-check-input m-1" type="radio"
-                                                        name="status" id="Completed">
-                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                    <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                        id="radioCompleted">
+                                                    <label class="form-check-label" for="radioCompleted">
                                                         Completed
                                                     </label>
                                                 </div>
@@ -320,33 +316,26 @@
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="imageOrientation">Notes<span class="text-danger">
                                                         *</span></span>
-
-                                                <div class="form-floating">
-                                                    <textarea class="form-control" placeholder="Leave a comment here"
-                                                        id="floatingTextarea"></textarea>
-                                                    <label for="floatingTextarea"></label>
-                                                </div>
+                                                <textarea class="form-control" id="textareaNotes"></textarea>
                                             </div>
                                         </div>
+                                
 
+                                <!--create user and clear button-->
+                                <div class="row mt-5">
+                                    <div class="col-6 text-start">
+                                        <button type="reset" id="submit" value="buttonClear" class="btn btn-secondary"><i
+                                                class="fa-solid fa-eraser" style="color: #ffffff;"></i> Clear</button>
+                                    </div>
 
-                                        <!--create user and clear button-->
-                                        <div class="row mt-5">
-                                            <div class="col-6 text-start">
-                                                <button type="reset" id="submit" value="Clear"
-                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                        style="color: #ffffff;"></i> Clear</button>
-                                            </div>
+                                    <div class="col-6 text-start">
+                                        <button type="submit" id="buttonSubmit" value="Add Employee"
+                                            class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                style="color: #ffffff;"></i> Add</button>
 
-                                            <div class="col-6 text-start">
-                                                <button type="submit" id="submit" value="Add Employee"
-                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                        style="color: #ffffff;"></i> Add</button>
-
-                                            </div>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -354,6 +343,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <script src="mainjsfile.js"></script>
 </body>
 
 </html>
