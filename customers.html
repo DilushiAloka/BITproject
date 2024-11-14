@@ -23,11 +23,8 @@
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
 
     <style>
-        .scrollable-card {
-            height: 500px;
-            /* Set the desired height */
-            overflow-y: auto;
-            /* Enable vertical scrolling */
+        .card-img {
+            height: 700px;
         }
     </style>
 </head>
@@ -173,7 +170,6 @@
                     <table id="tableUsers" class="table table-striped table-hover ">
                         <thead class="table-dark text-start">
                             <tr>
-                                <th>Customer ID</th>
                                 <th>Registration No</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
@@ -189,7 +185,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
+
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -247,31 +243,6 @@
                                     <form action="" class="needs-validation" novalidate method="post">
 
 
-                                        <!--customer id filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelCusId">Customer ID</span>
-                                                <input type="text" class="form-control" readonly id="textCusId">
-                                            </div>
-                                        </div>
-
-
-                                        <!--customer registration no-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="LableCusRegNo">Reg No<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" id="textCusRegNo" readonly>
-                                            </div>
-                                        </div>
-
-
                                         <!--first name -->
                                         <div class="row mt-3">
                                             <div class="input-group">
@@ -281,7 +252,8 @@
                                                     id="labelFirstName">First Name<span class="text-danger">
                                                         *</span></span>
                                                 <input type="text" class="form-control" placeholder="Type First Name..."
-                                                    id="textFirstName" required>
+                                                    id="textFirstName" required
+                                                    onkeyup="textElementValidator(this,'^([a-zA-Z]{2,20})$')">
                                                 <div class="invalid-feedback"> Please type first name.</div>
                                             </div>
                                         </div>
@@ -293,11 +265,10 @@
                                                 <span class="input-group-text col-3 fw-bold"
                                                     onClick=this.parentNode.children[1].focus();
                                                     style="background-color:#343a40; color: #ffffff;" id="lastname">Last
-                                                    Name<span class="text-danger">
-                                                        *</span></span>
+                                                    Name</span>
                                                 <input type="text" class="form-control" id="textLastName"
-                                                    placeholder="Type Last Name..." required>
-                                                <div class="invalid-feedback"> Please type last name.</div>
+                                                    placeholder="Type Last Name..."
+                                                    onkeyup="textElementValidator(this,'^([a-zA-Z]{2,20})$')">
                                             </div>
                                         </div>
 
@@ -311,7 +282,9 @@
                                                     id="labelContactNo">Contact No<span class="text-danger">
                                                         *</span></span>
                                                 <input type="text" class="form-control" id="textCotactNo"
-                                                    placeholder="Type Contact No..." required>
+                                                    placeholder="Type Contact No..."
+                                                    onkeyup="textElementValidator(this,'^[0][7][^39][0-9]{7}$')"
+                                                    required>
                                                 <div class="invalid-feedback"> Please type contact number.</div>
                                             </div>
                                         </div>
@@ -326,7 +299,8 @@
                                                     id="labelEmail">Email<span class="text-danger">
                                                         *</span></span>
                                                 <input type="email" class="form-control"
-                                                    placeholder="Type Email Address..." required id="textEmail">
+                                                    placeholder="Type Email Address..." required id="textEmail"
+                                                    onkeyup="textElementValidator(this,'^([a-zA-Z0-9\.\!\#\$\%\^\&\*\'\+\-\/\=\?\^\_\`\{\|\}]{3,50})[@][a-zA-Z]{3,20}[.][a-zA-Z]{2,3}$')">
                                                 <div class="invalid-feedback"> Please type email address.</div>
                                             </div>
                                         </div>
@@ -347,21 +321,6 @@
                                         </div>
 
 
-                                        <!--city-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelCity">City<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" id="textCity"
-                                                    placeholder="Type City..." required>
-                                                <div class="invalid-feedback"> Please type city.</div>
-                                            </div>
-                                        </div>
-
-
                                         <!--district-->
                                         <div class="row mt-3">
                                             <div class="input-group">
@@ -370,9 +329,11 @@
                                                     style="background-color:#343a40; color: #ffffff;"
                                                     id="labelDistrict">District<span class="text-danger">
                                                         *</span></span>
-                                                <input type="text" class="form-control" id="textDistrict"
-                                                    placeholder="Type District..." required>
-                                                <div class="invalid-feedback"> Please type district.</div>
+                                                </select><select id="selectDistrict" class="form-select ">
+                                                    <option value="" disabled selected>Select District
+                                                    </option>
+                                                </select>
+                                                <div class="invalid-feedback"> Please select district.</div>
                                             </div>
                                         </div>
 
@@ -403,6 +364,7 @@
                                             </div>
                                         </div>
 
+
                                         <!-- notes textarea-->
                                         <div class="row mt-3">
                                             <div class="input-group">
@@ -414,31 +376,31 @@
                                                 <textarea class="form-control" id="textareaNotes"></textarea>
                                             </div>
                                         </div>
+
+
+                                        <!--create user and clear button-->
+                                        <div class="row mt-5">
+                                            <div class="col-6 text-start">
+                                                <button type="reset" id="buttonClear" value="Clear"
+                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                        style="color: #ffffff;"></i> Clear</button>
+                                            </div>
+
+                                            <div class="col-6 text-start">
+                                                <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                        style="color: #ffffff;"></i> Add</button>
+
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-
-
-                                <!--create user and clear button-->
-                                <div class="row mt-5">
-                                    <div class="col-6 text-start">
-                                        <button type="reset" id="buttonClear" value="Clear" class="btn btn-secondary"><i
-                                                class="fa-solid fa-eraser" style="color: #ffffff;"></i> Clear</button>
-                                    </div>
-
-                                    <div class="col-6 text-start">
-                                        <button type="submit" id="buttonSubmit" value="Add Employee"
-                                            class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                style="color: #ffffff;"></i> Add</button>
-
-                                    </div>
-                                </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script src="mainjsfile.js"></script>
 </body>

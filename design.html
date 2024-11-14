@@ -24,14 +24,10 @@
 
 
     <style>
-        .scrollable-card {
-            height: 500px;
-            /* Set the desired height */
-            overflow-y: auto;
-            /* Enable vertical scrolling */
-        }
+       .card-img {
+        height: 500px;}
     </style>
-    
+
 </head>
 
 
@@ -179,30 +175,15 @@
                                 <th>Design Code</th>
                                 <th>Image</th>
                                 <th>Name</th>
+                                <th>Orientation</th>
                                 <th>Category</th>
-                                <th>Status</th>
+                                <th>Type</th>
                                 <th>Notes</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                        <tbody id="designTableBody">
 
-                                <td>
-                                    <button class="options-btn"><i class="fa-solid fa-eye"
-                                            style="color: #071731;"></i></button>
-                                    <button class="options-btn"><i class="fa-solid fa-pen-to-square"
-                                            style="color: #089131;"></i></button>
-                                    <button class="options-btn"><i class="fa-solid fa-trash-can"
-                                            style="color: #fd0d0d;"></i></button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
 
@@ -240,18 +221,6 @@
 
                                     <form action="" class="needs-validation" novalidate method="post">
 
-                                        <!--design code filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-3 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelDesignCode">Design code</span>
-                                                <input type="text" class="form-control" id="textDesignCode" readonly>
-                                            </div>
-                                        </div>
-
-
                                         <!--photo -->
                                         <div class="row mt-3">
                                             <div class="input-group">
@@ -275,7 +244,7 @@
                                                     id="labelImageName">Image Name<span class="text-danger">
                                                         *</span></span>
                                                 <input type="text" class="form-control" id="textImageName"
-                                                    placeholder="Type Design Name..." required>
+                                                    placeholder="Type Design Name..." required onkeyup="textElementValidator(this,'^([a-zA-Z]{2,10}[ ])+([a-z]{2,10})+$')">
                                                 <div class="invalid-feedback"> Please type Image Name.</div>
                                             </div>
                                         </div>
@@ -349,6 +318,20 @@
                                             </div>
                                         </div>
 
+                                        
+                                    <!-- notes textarea-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="imageOrientation">Notes<span class="text-danger">
+                                                    *</span></span>
+                                            <textarea class="form-control" id="textareaNotes"onkeyup="textareaNotesdValidator()"></textarea>
+
+                                        </div>
+                                    </div>
+                            
 
                                         <!--create user and clear button-->
                                         <div class="row mt-5">

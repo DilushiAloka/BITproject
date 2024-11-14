@@ -22,13 +22,9 @@
     <!--link font awesome css file-->
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
 
-
     <style>
-        .scrollable-card {
-            height: 500px;
-            /* Set the desired height */
-            overflow-y: auto;
-            /* Enable vertical scrolling */
+        .card-img {
+            height: 900px;
         }
     </style>
 
@@ -176,7 +172,7 @@
                     <table id="tableUsers" class="table table-striped table-hover ">
                         <thead class="table-dark text-start">
                             <tr>
-                                <th>Supplier ID</th>
+                               
                                 <th>Company name</th>
                                 <th>BR no </th>
                                 <th>Contact person's name </th>
@@ -265,7 +261,7 @@
                                     </div>
                                 </td>
                                 <td></td>
-                                <td></td>
+                                
                                 <td>
                                     <button class="options-btn"><i class="fa-solid fa-eye"
                                             style="color: #071731;"></i></button>
@@ -309,242 +305,205 @@
                                     </div>
                                 </div>
 
-                                <form action="" class="needs-validation" novalidate method="post"></form>
-
-                                <!-- supplier id filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelSupplierID">Suppplier ID</span>
-                                        <input type="text" class="form-control" id="textSupplierId">
-                                    </div>
-                                </div>
-
-
-                                <!-- company name filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelCompanyName">Company Name</span>
-                                        <input type="text" class="form-control" id="textCompanyName">
-                                        <div class="invalid-feedback"> Please type Company Name.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- BR No filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;" id="labelBrNo">BR
-                                            No</span>
-                                        <input type="text" class="form-control" id="textBrNo">
-                                    </div>
-                                </div>
-
-
-                                <!-- Contact person's name filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelContactPerson">Contact Person</span>
-                                        <input type="text" class="form-control" id="textContactPerson" required>
-                                        <div class="invalid-feedback"> Please type Contact Person's Name.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- contact no filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelContactNo">Contact No</span>
-                                        <input type="text" class="form-control" id="textContactNo" required>
-                                        <div class="invalid-feedback"> Please type Contact Number.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- email filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelEmail">Email</span>
-                                        <input type="text" class="form-control" id="textEmail" required>
-                                        <div class="invalid-feedback"> Please type Email.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Material list filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelMaterialList">Item List</span>
-                                        <select class="form-select" id="selectSupplierID"></select>
-
-                                        <select class="form-select" id="selectMaterialID">Material ID </select>
-                                        <div class="invalid-feedback"> Please select material list.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- ACCOUNT NO filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelAccountNo">Account
-                                            No</span>
-                                        <input type="text" class="form-control" id="textAccountNo" required>
-                                        <div class="invalid-feedback"> Please type account no.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- ACCOUNT Name filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelAccountName">Account
-                                            Name</span>
-                                        <input type="text" class="form-control" id="textAccountName" required>
-                                        <div class="invalid-feedback"> Please type account name.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- bank filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;" id="labelBank">Bank</span>
-                                        <input type="text" class="form-control" id="textBank" required>
-                                        <div class="invalid-feedback"> Please type bank.</div>
-                                    </div>
-                                </div>
-
-
-                                <!-- Branch filed-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelBranch">Branch</span>
-                                        <input type="text" class="form-control" id="textBranch" required>
-                                        <div class="invalid-feedback"> Please type branch.</div>
-                                    </div>
-                                </div>
-
-
-
-                                <!--Material list transfer datalist component-->
-
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;" id="labelFrameType">
-                                            Material List<span class="text-danger">
-                                                *</span></span>
-                                    </div>
-                                    <div class="container transfer-list mt-2">
-                                        <div class="side left-side" id="leftSide">
-                                            <!-- Items will be added dynamically here -->
-                                        </div>
-                                        <div class="mid-side">
-                                            <button class="all-to-right">>></button>
-                                            <button class="checked-to-right">></button>
-                                            <button class="checked-to-left">
-                                                << </button>
-                                                    <button class="all-to-left">
-                                                        << </button>
-                                        </div>
-                                        <div class="side right-side" id="rightSide">
-                                            <!-- Items will be added dynamically here -->
+                                <form action="" class="needs-validation" novalidate method="post">
+                                    <!-- company name filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelCompanyName">Company
+                                                Name</span>
+                                            <input type="text" class="form-control" id="textCompanyName" onkeyup="textElementValidator(this,'^([a-z]{2,20}[ ])+([a-z]{2,10})$')">
+                                            <div class="invalid-feedback"> Please type Company Name.</div>
                                         </div>
                                     </div>
-                                    <div class="invalid-feedback"> Please selectat least one material.</div>
-                                </div>
 
 
-
-                                <!-- stauts radiobutton-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="labelStatus">Status<span class="text-danger">
-                                                *</span></span>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input m-1" type="radio" name="radioStatus"
-                                                id="radioActive" checked>
-                                            <label class="form-check-label" for="radioActive">
-                                                Active
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input m-1" type="radio" name="radioStatus"
-                                                id="radioInactive">
-                                            <label class="form-check-label" for="radioInactive">
-                                                Inactive
-                                            </label>
+                                    <!-- BR No filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;" id="labelBrNo">BR
+                                                No</span>
+                                            <input type="text" class="form-control" id="textBrNo">
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <!-- notes textarea-->
-                                <div class="row mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-text col-4 fw-bold"
-                                            onClick=this.parentNode.children[1].focus();
-                                            style="background-color:#343a40; color: #ffffff;"
-                                            id="textareaNotes">Notes<span class="text-danger">
-                                                *</span></span>
-                                        <div class="form-floating">
+                                    <!-- Contact person's name filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelContactPerson">Contact Person</span>
+                                            <input type="text" class="form-control" id="textContactPerson" onkeyup="textElementValidator(this,'^([a-z]{2,20}[ ])+([a-z]{2,10})$')" required>
+                                            <div class="invalid-feedback"> Please type Contact Person's Name.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- contact no filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelContactNo">Contact
+                                                No</span>
+                                            <input type="text" class="form-control" id="textContactNo" required onkeyup="textElementValidator(this,'^[0][7][^39][0-9]{7}$')">
+                                            <div class="invalid-feedback"> Please type Contact Number.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- email filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelEmail">Email</span>
+                                            <input type="text" class="form-control" id="textEmail" onkeyup="textElementValidator(this, '^([a-zA-Z0-9\.\!\#\$\%\^\&\*\'\+\-\/\=\?\^\_\`\{\|\}]{3,50})[@][a-zA-Z]{3,20}[.][a-zA-Z]{2,3}$')" required>
+                                            <div class="invalid-feedback"> Please type Email.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Material list filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelMaterialList">Item
+                                                List</span>
+                                            <select class="form-select" id="selectMaterialID">Material ID </select>
+                                            <div class="invalid-feedback"> Please select material list.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- ACCOUNT NO filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelAccountNo">Account
+                                                No</span>
+                                            <input type="text" class="form-control" id="textAccountNo" required>
+                                            <div class="invalid-feedback"> Please type account no.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- ACCOUNT Name filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelAccountName">Account
+                                                Name</span>
+                                            <input type="text" class="form-control" id="textAccountName" required>
+                                            <div class="invalid-feedback"> Please type account name.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- bank filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelBank">Bank</span>
+                                            <input type="text" class="form-control" id="textBank" required>
+                                            <div class="invalid-feedback"> Please type bank.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Branch filed-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelBranch">Branch</span>
+                                            <input type="text" class="form-control" id="textBranch" required>
+                                            <div class="invalid-feedback"> Please type branch.</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- stauts radiobutton-->
+                                    <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="labelStatus">Status<span class="text-danger">
+                                                    *</span></span>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                    id="radioActive" checked>
+                                                <label class="form-check-label" for="radioActive">
+                                                    Active
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                    id="radioInactive">
+                                                <label class="form-check-label" for="radioInactive">
+                                                    Inactive
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input m-1" type="radio" name="radioStatus"
+                                                    id="radioDeleted">
+                                                <label class="form-check-label" for="radioDeleted">
+                                                    Deleted
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                      <!-- notes textarea-->
+                                      <div class="row mt-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text col-4 fw-bold"
+                                                onClick=this.parentNode.children[1].focus();
+                                                style="background-color:#343a40; color: #ffffff;"
+                                                id="imageOrientation">Notes<span class="text-danger">
+                                                    *</span></span>
                                             <textarea class="form-control" id="textareaNotes"></textarea>
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <!--create user and clear button-->
-                                <div class="row mt-5">
-                                    <div class="col-6 text-start">
-                                        <button type="reset" id="buttonClear" value="Clear" class="btn btn-secondary"><i
-                                                class="fa-solid fa-eraser" style="color: #ffffff;"></i>
-                                            Clear</button>
+                                    <!--create user and clear button-->
+                                    <div class="row mt-5">
+                                        <div class="col-6 text-start">
+                                            <button type="reset" id="buttonClear" value="Clear"
+                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                    style="color: #ffffff;"></i>
+                                                Clear</button>
+                                        </div>
+
+                                        <div class="col-6 text-start">
+                                            <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                    style="color: #ffffff;"></i> Add</button>
+
+                                        </div>
                                     </div>
-
-                                    <div class="col-6 text-start">
-                                        <button type="submit" id="buttonSubmit" value="Add Employee"
-                                            class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                style="color: #ffffff;"></i> Add</button>
-
-                                    </div>
-                                </div>
 
                                 </form>
                             </div>
@@ -555,6 +514,7 @@
         </div>
     </div>
     </div>
+    </di4v>
     <script src="mainjsfile.js"></script>
 </body>
 

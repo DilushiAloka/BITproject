@@ -24,11 +24,8 @@
 </head>
 
 <style>
-    .scrollable-card {
-        height: 500px;
-        /* Set the desired height */
-        overflow-y: auto;
-        /* Enable vertical scrolling */
+    .card-img {
+        height: 600px;
     }
 </style>
 
@@ -172,7 +169,6 @@
                     <table id="tableUsers" class="table table-striped table-hover ">
                         <thead class="table-dark text-start">
                             <tr>
-                                <th>Material ID</th>
                                 <th>Name</th>
                                 <th>Category</th>
                                 <th>Available Quantity</th>
@@ -186,26 +182,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <button class="options-btn"><i class="fa-solid fa-eye"
-                                            style="color: #071731;"></i></button>
-                                    <button class="options-btn"><i class="fa-solid fa-pen-to-square"
-                                            style="color: #089131;"></i></button>
-                                    <button class="options-btn"><i class="fa-solid fa-trash-can"
-                                            style="color: #fd0d0d;"></i></button>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
 
@@ -244,19 +221,6 @@
                                 <form action="" class="needs-validation" novalidate method="post">
 
 
-                                    <!--material id filed-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="labelMaterialId">Material ID</span>
-                                            <input type="text" class="form-control" id="textMaterialId" readonly
-                                                required>
-                                        </div>
-                                    </div>
-
-
                                     <!--name filed-->
                                     <div class="row mt-3">
                                         <div class="input-group">
@@ -265,26 +229,11 @@
                                                 style="background-color:#343a40; color: #ffffff;"
                                                 id="labelMaterialName">Name<span class="text-danger">
                                                     *</span></span>
-                                            <input type="text" class="form-control" id="textMaterialName" required>
+                                            <input type="text" class="form-control" id="textMaterialName"
+                                                onkeyup="textElementValidator(this,'^([a-z]{2,20}[ ])+([a-z]{2,10})$')"
+                                                required>
                                         </div>
                                         <div class="invalid-feedback"> Please type Material Name.</div>
-                                    </div>
-
-
-                                    <!--material category field-->
-                                    <div class="row mt-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text col-4 fw-bold"
-                                                onClick=this.parentNode.children[1].focus();
-                                                style="background-color:#343a40; color: #ffffff;"
-                                                id="labelMaterialCategory">Category<span class="text-danger">
-                                                    *</span></span>
-                                            <select class="form-select" id="selectMaterialCategory" required>
-                                                <option value="" selected disabled>Select Category</option>
-
-                                            </select>
-                                            <div class="invalid-feedback"> Please select category.</div>
-                                        </div>
                                     </div>
 
 
@@ -296,9 +245,9 @@
                                                 style="background-color:#343a40; color: #ffffff;" id="image">Available
                                                 Quantity<span class="text-danger">
                                                     *</span></span>
-                                            <select class="form-select" id="selectAvailableQuantity" required>
-                                                <option value="" selected disabled>Select available quantity</option>
-                                            </select>
+                                            <input type="text" class="form-control" placeholder="Type Material cost..."
+                                                id="textAvailableQunatity"
+                                                onkeyup="textElementValidator(this,'^([0-9]{1,3})$')">
                                             <div class="invalid-feedback"> Please select available quantity.</div>
                                         </div>
                                     </div>
@@ -311,9 +260,9 @@
                                                 style="background-color:#343a40; color: #ffffff;" id="labelRop">Reorder
                                                 point<span class="text-danger">
                                                     *</span></span>
-                                            <select class="form-select" id="selectRop" required>
-                                                <option value="" selected disabled>Select ROP</option>
-                                            </select>
+                                            <input type="text" class="form-control" placeholder="Type reorder point..."
+                                                id="textReorderPoint"
+                                                onkeyup="textElementValidator(this,'^([0-9]{1,2})$')">
                                             <div class="invalid-feedback"> Please select Reorder Point.</div>
                                         </div>
                                     </div>
@@ -327,9 +276,9 @@
                                                 style="background-color:#343a40; color: #ffffff;" id="labelRoq">Reorder
                                                 Quantity<span class="text-danger">
                                                     *</span></span>
-                                            <select class="form-select" id="selectRoq" required>
-                                                <option value="" selected disabled>Select ROQ</option>
-                                            </select>
+                                            <input type="text" class="form-control"
+                                                placeholder="Type reorder quantity..." id="textReorder
+                                                Quantity" onkeyup="textElementValidator(this,'^([0-9]{1,2})$')">
                                             <div class="invalid-feedback"> Please select Reorder Quantity.</div>
                                         </div>
                                     </div>
@@ -358,7 +307,9 @@
                                                 id="labelTotalQuantity">Total
                                                 Quantity<span class="text-danger">
                                                     *</span></span>
-                                            <input type="text" class="form-control" id="textTotalQuantity" required>
+                                            <input type="text" class="form-control"
+                                                placeholder="Type reorder quantity..." id="textTotal
+                                                Quantity" onkeyup="textElementValidator(this,'^([0-9]{1,3})$')">
                                             <div class="invalid-feedback"> Please Enter total quantity.</div>
                                         </div>
                                     </div>
@@ -402,30 +353,32 @@
                                             <textarea class="form-control" id="textareaNotes"></textarea>
                                         </div>
                                     </div>
-                           
 
-                            <!--create user and clear button-->
-                            <div class="row mt-5">
-                                <div class="col-6 text-start">
-                                    <button type="reset" id="submit" value="buttonClear" class="btn btn-secondary"><i
-                                            class="fa-solid fa-eraser" style="color: #ffffff;"></i>
-                                        Clear</button>
-                                </div>
 
-                                <div class="col-6 text-start">
-                                    <button type="submit" id="buttonSubmit" value="Add Employee" class="btn btn-success"><i
-                                            class="fa-solid fa-user-plus" style="color: #ffffff;"></i> Add</button>
+                                    <!--create user and clear button-->
+                                    <div class="row mt-5">
+                                        <div class="col-6 text-start">
+                                            <button type="reset" id="submit" value="buttonClear"
+                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                    style="color: #ffffff;"></i>
+                                                Clear</button>
+                                        </div>
 
-                                </div>
+                                        <div class="col-6 text-start">
+                                            <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                    style="color: #ffffff;"></i> Add</button>
+
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            </form>
                         </div>
                     </div>
                 </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
         </div>
-    </div>
     </div>
     <script src="mainjsfile.js"></script>
 </body>

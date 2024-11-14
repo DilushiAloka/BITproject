@@ -65,7 +65,6 @@ tr:hover .options-btn {
 
 
 .card-img {
-  height: 500px;
   object-fit: cover;
   opacity: 0.5;
 }

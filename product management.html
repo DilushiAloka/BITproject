@@ -23,11 +23,12 @@
     <link rel="stylesheet" href="../../Resources/fontawesome/fontawesome-free-6.6.0/css/all.min.css">
 
     <style>
-        .scrollable-card {
+        .card-img {
+            height: 1000px;
+        }
+
+        .card-innerForm {
             height: 500px;
-            /* Set the desired height */
-            overflow-y: auto;
-            /* Enable vertical scrolling */
         }
     </style>
 </head>
@@ -150,9 +151,9 @@
             <div class="row text-end">
                 <div class="col-8"></div>
                 <div class="col-4">
-                    <button class="btn" style="color: #005eff;" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
-                            class="fa-regular fa-square-plus" style="color: #005eff;"></i> <b>New</b></button>
+                    <button class="btn" style="color: #005eff;" type="button" data-bs-toggle="modal"
+                        data-bs-target="#fullscreenModal"><i class="fa-regular fa-square-plus"
+                            style="color: #005eff;"></i> <b>New</b></button>
                     <button type="button" class="btn"><i class="fa-solid fa-print" style="color: #000000;"></i><b>
                             Print</b></button>
                 </div>
@@ -164,7 +165,7 @@
                         <thead class="table-dark text-start">
                             <tr>
                                 <th>Product ID</th>
-                                <th>Design Code</th>
+                                <th>Design ID</th>
                                 <th>Photo</th>
                                 <th>Name</th>
                                 <th>Category_id</th>
@@ -244,324 +245,373 @@
 
         <!--FORM SECTION-->
 
-        <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight"
-            aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <button type="button" class="btn btn-outline-light btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-            </div>
+        <!-- Modal -->
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background-color:  #343a40;">
+                    <div class="modal-header">
+                       
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
 
-            <div class="offcanvas-body">
-                <div class="row">
-                    <div class="col-1"></div>
-
-                    <div class="col-10">
-                        <div class="card">
-                            <img src="../images/bg.png" class="card-img" alt="Background Image">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="card-body scrollable-card">
-
-                                    <!--required mark-->
-                                    <div class="row">
-                                        <div class="col-12 fw-bold text-end">
-                                            <p><span class="text-danger">*</span>Required</p>
-                                        </div>
-                                    </div>
-
-                                    <form action="" class="needs-validation" novalidate method="post">
-
-                                        <!--product id -->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelProductID">Product ID</span>
-                                                <input type="text" class="form-control" readonly id="textProductID"
-                                                    required>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="../images/bg.png" class="card-img" alt="Background Image">
+                                    <div class="card-img-overlay ">
+                                        <!--required mark-->
+                                        <div class="row">
+                                            <div class="col-12 fw-bold text-end">
+                                                <p><span class="text-danger">*</span>Required</p>
                                             </div>
                                         </div>
 
+                                        <form action="" class="needs-validation" novalidate method="post">
 
-                                        <!--design code-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelDesignCode">Design code</span>
-                                                <input type="text" class="form-control" readonly id="textDesignCode"
-                                                    required>
-                                            </div>
-                                        </div>
-
-
-                                        <!--product name field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelProductName">Product Name<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Type Design Name..." required id="textProductName">
-                                                <div class="invalid-feedback"> Please type Product Name.</div>
-                                            </div>
-                                        </div>
-
-
-                                        <!--photo-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelProductImage">Image<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="file" class="form-control" required id="fileProductImage">
-                                                <div class="invalid-feedback"> Please insert Product Photo.</div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- producy category datalist-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelProductCategory">Category<span class="text-danger">
-                                                        *</span></span>
-                                                <input class="form-control" list="datalistOptions"
-                                                    id="datalistProductCategory" placeholder="Type to search..."
-                                                    required>
-                                                <datalist id="datalistOptions">
-                                                    <option value="" selected disabled>Select Category</option>
-                                                </datalist>
-                                                <div class="invalid-feedback"> Please select a category.</div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- frameSize dropdown-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelFrameSize">Frame size ID<span class="text-danger">
-                                                        *</span></span>
-                                                <select class="form-select" id="selectFrameSize">
-                                                    <option value="" disabled selected>Select a Frame Size</option>
-                                                </select>
-                                                <div class="invalid-feedback"> Please select a frame size.</div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- frameType dropdown-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelFrameType"> Frame type ID<span class="text-danger">
-                                                        *</span></span>
-                                                <select class="form-select" id="selectFrameType">
-                                                    <option value="" selected disabled> Select a Frame Type</option>
-                                                </select>
-                                                <div class="invalid-feedback"> Please select a frame type.</div>
-                                            </div>
-                                        </div>
-
-
-                                        <!--Material list transfer datalist component-->
-
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelMaterialList"> Material List<span class="text-danger">
-                                                        *</span></span>
-                                            </div>
-                                            <div class="container transfer-list mt-2">
-                                                <div class="side left-side" id="leftSide">
-                                                    <!-- Items will be added dynamically here -->
+                                            <!--design id -->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelDesignCode">Design code</span>
+                                                    <select id="selectDesign" class="form-select">
+                                                        <option value=disabled selected>Select Design
+                                                        </option>
+                                                    </select>
+                                                    <div class="invalid-feedback"> Please select designation.</div>
                                                 </div>
-                                                <div class="mid-side">
-                                                    <button class="all-to-right">>></button>
-                                                    <button class="checked-to-right">></button>
-                                                    <button class="checked-to-left">
-                                                        << </button>
-                                                            <button class="all-to-left">
-                                                                << </button>
-                                                </div>
-                                                <div class="side right-side" id="rightSide">
-                                                    <!-- Items will be added dynamically here -->
-                                                </div>
-                                                <div class="invalid-feedback"> Please selectat least one material.</div>
                                             </div>
-                                        </div>
 
 
-                                        <!--material cost field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelMaterialCost">Material Cost<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Type Material cost..." readonly id="inputMaterialCost">
+                                            <!--product name field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelProductName">Product Name<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Type Design Name..." required id="textProductName"
+                                                        onkeyup="textElementValidator(this,'^([a-z]{2,20}[ ])+([a-z]{2,10})$')">
+                                                    <div class="invalid-feedback"> Please type Product Name.</div>
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <!--ROP filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelRop">Reorder
-                                                    point<span class="text-danger">
-                                                        *</span></span>
-                                                <select class="form-select" id="selectRop" required>
-                                                    <option value="" selected disabled>Select ROP</option>
-                                                                                                    </select>
+                                            <!--photo-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelProductImage">Image<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="file" class="form-control" required
+                                                        id="fileProductImage">
+                                                    <div class="invalid-feedback"> Please insert Product Photo.</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- producy category datalist-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelProductCategory">Category<span class="text-danger">
+                                                            *</span></span>
+                                                    <input class="form-control" list="datalistOptions"
+                                                        id="datalistProductCategory" placeholder="Type to search..."
+                                                        required>
+                                                    <datalist id="datalistOptions">
+                                                        <option value="" selected disabled>Select Category</option>
+                                                    </datalist>
+                                                    <div class="invalid-feedback"> Please select a category.</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- frameSize dropdown-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelFrameSize">Frame size ID<span class="text-danger">
+                                                            *</span></span>
+                                                    <select class="form-select" id="selectFrameSize">
+                                                        <option value="" disabled selected>Select a Frame Size</option>
+                                                    </select>
+                                                    <div class="invalid-feedback"> Please select a frame size.</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- frameType dropdown-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelFrameType">
+                                                        Frame type ID<span class="text-danger">
+                                                            *</span></span>
+                                                    <select class="form-select" id="selectFrameType">
+                                                        <option value="" selected disabled> Select a Frame Type</option>
+                                                    </select>
+                                                    <div class="invalid-feedback"> Please select a frame type.</div>
+                                                </div>
+                                            </div>
+
+                                            <!--material cost field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelMaterialCost">Material Cost<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Type Material cost..." id="inputMaterialCost"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{2,5})$')">
+                                                </div>
+                                            </div>
+
+
+                                            <!--ROP filed-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelRop">Reorder
+                                                        point<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Type reorder point..." id="textReorderPoint"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{1,2})$')">
+                                                </div>
                                                 <div class="invalid-feedback"> Please select Reorder Point.</div>
                                             </div>
-                                        </div>
 
 
-                                        <!--reorder quantity filed-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelRoq">Reorder
-                                                    Quantity<span class="text-danger">
-                                                        *</span></span>
-                                                <select class="form-select" id="selectRoq" required>
-                                                    <option value="" selected disabled>Select ROQ</option>
-                                                                                                   </select>
+                                            <!--reorder quantity filed-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelRoq">Reorder
+                                                        Quantity<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Type reorder quantity..." id="textReorder
+                                                    Quantity" onkeyup="textElementValidator(this,'^([0-9]{1,2})$')">
+                                                </div>
                                                 <div class="invalid-feedback"> Please select Reorder Quantity.</div>
                                             </div>
-                                        </div>
-
-
-                                        <!--production cost field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelProductionCost">Production Cost<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" readonly
-                                                    id="textProductionCost">
-                                            </div>
-                                        </div>
-
-
-                                        <!--profit rate field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelProfitRate">Profit Rate<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Type Profit Rate..." required>
-                                                <div class="invalid-feedback"> Please type profit rate.</div>
-                                            </div>
-                                        </div>
-
-
-                                        <!--selling price field-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelSellingPrice">Selling Price<span class="text-danger">
-                                                        *</span></span>
-                                                <input type="text" class="form-control" id="textSellingPrice" readonly>
-                                            </div>
-                                        </div>
 
 
 
-                                        <!-- stauts radiobutton-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="labelStatus">Status<span class="text-danger">
-                                                        *</span></span>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio"
-                                                        name="flexRadioDefault" id="radioInStock" checked>
-                                                    <label class="form-check-label" for="radioInStock">
-                                                        In Stock
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input m-2" type="radio"
-                                                        name="flexRadioDefault" id="radioOutOfStock">
-                                                    <label class="form-check-label" for="radioOutOfStock">
-                                                        Out of Stock
-                                                    </label>
+                                            <!--production cost field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelProductionCost">Production Cost<span
+                                                            class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control" readonly
+                                                        id="textProductionCost"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{2,5})$')">
                                                 </div>
                                             </div>
-                                        </div>
 
 
-                                        <!-- notes textarea-->
-                                        <div class="row mt-3">
-                                            <div class="input-group">
-                                                <span class="input-group-text col-4 fw-bold"
-                                                    onClick=this.parentNode.children[1].focus();
-                                                    style="background-color:#343a40; color: #ffffff;"
-                                                    id="imageOrientation">Notes<span class="text-danger">
-                                                        *</span></span>
-                                                <div class="form-floating">
-                                                    <textarea class="form-control" id="textareaNotes"></textarea>
+                                            <!--profit rate field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelProfitRate">Profit Rate<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Type Profit Rate..." required>
+                                                    <div class="invalid-feedback"> Please type profit rate.</div>
                                                 </div>
                                             </div>
-                                        </div>
 
 
-                                        <!--create user and clear button-->
-                                        <div class="row mt-5">
-                                            <div class="col-6 text-start">
-                                                <button type="reset" id="buttonClear" value="Clear"
-                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                        style="color: #ffffff;"></i> Clear</button>
+                                            <!--selling price field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelSellingPrice">Selling Price<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control" id="textSellingPrice"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{2,5})$')">
+                                                </div>
                                             </div>
-                                            <div class="col-6 text-start">
-                                                <button type="submit" id="buttonSubmit" value="Add Employee"
-                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                        style="color: #ffffff;"></i> Add</button>
 
+
+
+                                            <!-- stauts radiobutton-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelStatus">Status<span class="text-danger">
+                                                            *</span></span>
+
+                                                    <div class="form-check">
+                                                        <input class="form-check-input m-2" type="radio"
+                                                            name="flexRadioDefault" id="radioInStock" checked>
+                                                        <label class="form-check-label" for="radioInStock">
+                                                            In Stock
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input m-2" type="radio"
+                                                            name="flexRadioDefault" id="radioOutOfStock">
+                                                        <label class="form-check-label" for="radioOutOfStock">
+                                                            Out of Stock
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
+
+
+                                            <!-- notes textarea-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="imageOrientation">Notes<span class="text-danger">
+                                                            *</span></span>
+                                                    <div class="form-floating">
+                                                        <textarea class="form-control" id="textareaNotes"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!--create user and clear button-->
+                                            <div class="row mt-5">
+                                                <div class="col-6 text-start">
+                                                    <button type="reset" id="buttonClear" value="Clear"
+                                                        class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                            style="color: #ffffff;"></i> Clear</button>
+                                                </div>
+                                                <div class="col-6 text-start">
+                                                    <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                        class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                            style="color: #ffffff;"></i> Add</button>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="mainjsfile.js"></script>
+
+                            <div class="col-6">
+                                <form action="">
+                                    <div class="card">
+                                        <img src="../images/bg.png" class="card-innerForm" alt="Background Image">
+                                        <div class="card-img-overlay ">
+
+                                            <!--Material Id field-->
+                                            <div class="row">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelMaterialId">Material ID<span class="text-danger">
+                                                            *</span></span>
+                                                    <select id="selectMaterialId" class="form-select ">
+                                                        <option value="" disabled selected>Select Material
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!--quantity field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelQuantity">Quantity<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control" required id="textQuantity"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{1,3})$')">
+                                                    <div class="invalid-feedback"> Please type correct quantity.</div>
+                                                </div>
+                                            </div>
+
+
+                                            <!--unit price field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelUnitPrice">Unit Price<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control" required id="textUnitPrice"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{1,4})$')">
+                                                    <div class="invalid-feedback"> Please type unit price.</div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <!--line total field-->
+                                            <div class="row mt-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-text col-4 fw-bold"
+                                                        onClick=this.parentNode.children[1].focus();
+                                                        style="background-color:#343a40; color: #ffffff;"
+                                                        id="labelLineTotal">Line Total<span class="text-danger">
+                                                            *</span></span>
+                                                    <input type="text" class="form-control" required id="textLibeTotal"
+                                                        onkeyup="textElementValidator(this,'^([0-9]{1,6})$')">
+                                                    <div class="invalid-feedback"> Please type correct line total.</div>
+                                                </div>
+                                            </div>
+
+                                </form>
+                                <div class="row mt-3">
+                                    <table id="tableProductionMaterial" class="table table-striped table-hover ">
+                                        <thead class="table-dark text-start">
+                                            <tr>
+                                                <th>Material</th>
+                                                <th>Quantity</th>
+                                                <th>Unit Price</th>
+                                                <th>Line Total</th>
+
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableProductionMaterialBody">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <script src="mainjsfile.js"></script>
 </body>
 
 </html>
