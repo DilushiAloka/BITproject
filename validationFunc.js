@@ -1,16 +1,31 @@
-//common function for text field  data validation
+//common function for  text field  data validation
 
 const textElementValidator = (element, pattern) => {
+  const elementValue = element.value;
   const regPattern = new RegExp(pattern);
 
-  if (regPattern.test(element.value)) {
-    //bootstrap validation
-    element.classList.remove("is-invalid");
-    element.classList.add("is-valid");
+  if (elementValue != "") {
+    //if value not empty}
+    if (regPattern.test(element.value)) {
+      //valid value
+      element.classList.remove("is-invalid");
+      element.classList.add("is-valid");
+    } else {
+      //invalid value
+      element.classList.add("is-invalid");
+      element.classList.remove("is-valid");
+    }
   } else {
-    //bootstrap validation
-    element.classList.add("is-invalid");
-    element.classList.remove("is-valid");
+    // if value is empty
+    if (element.required) {
+      //invalid value
+      element.classList.remove("is-valid");
+      element.classList.add("is-invalid");
+    } else {
+      //invalid value
+      element.classList.remove("is-valid");
+      element.classList.remove("is-invalid");
+    }
   }
 };
 
@@ -20,7 +35,6 @@ const dateElementValidator = (element) => {
   element.classList.remove("is-invalid");
   element.classList.add("is-valid");
 };
-
 
 //common function for textarea notes  data validation
 
@@ -38,4 +52,3 @@ textareaNotes.addEventListener("keyup", () => {
     textareaNotes.classList.remove("is-valid");
   }
 });
-

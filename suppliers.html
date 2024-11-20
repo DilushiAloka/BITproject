@@ -305,7 +305,7 @@
                                     </div>
                                 </div>
 
-                                <form action="" class="needs-validation" novalidate method="post">
+                                <form action="" class="needs-validation" novalidate method="post" onsubmit="return false">
                                     <!-- company name filed-->
                                     <div class="row mt-3">
                                         <div class="input-group">
@@ -313,7 +313,8 @@
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
                                                 id="labelCompanyName">Company
-                                                Name</span>
+                                                Name<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textCompanyName" onkeyup="textElementValidator(this,'^([a-z]{2,20}[ ])+([a-z]{2,10})$')">
                                             <div class="invalid-feedback"> Please type Company Name.</div>
                                         </div>
@@ -327,7 +328,7 @@
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;" id="labelBrNo">BR
                                                 No</span>
-                                            <input type="text" class="form-control" id="textBrNo">
+                                            <input type="text" class="form-control" id="textBrNo" onkeyup="this, textElementValidator(this,'^[0-9A-Z]{4,10}$')">
                                         </div>
                                     </div>
 
@@ -338,7 +339,8 @@
                                             <span class="input-group-text col-4 fw-bold"
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
-                                                id="labelContactPerson">Contact Person</span>
+                                                id="labelContactPerson">Contact Person<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textContactPerson" onkeyup="textElementValidator(this,'^([a-z]{2,20}[ ])+([a-z]{2,10})$')" required>
                                             <div class="invalid-feedback"> Please type Contact Person's Name.</div>
                                         </div>
@@ -352,7 +354,8 @@
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
                                                 id="labelContactNo">Contact
-                                                No</span>
+                                                No<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textContactNo" required onkeyup="textElementValidator(this,'^[0][7][^39][0-9]{7}$')">
                                             <div class="invalid-feedback"> Please type Contact Number.</div>
                                         </div>
@@ -365,7 +368,8 @@
                                             <span class="input-group-text col-4 fw-bold"
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
-                                                id="labelEmail">Email</span>
+                                                id="labelEmail">Email<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textEmail" onkeyup="textElementValidator(this, '^([a-zA-Z0-9\.\!\#\$\%\^\&\*\'\+\-\/\=\?\^\_\`\{\|\}]{3,50})[@][a-zA-Z]{3,20}[.][a-zA-Z]{2,3}$')" required>
                                             <div class="invalid-feedback"> Please type Email.</div>
                                         </div>
@@ -379,8 +383,9 @@
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
                                                 id="labelMaterialList">Item
-                                                List</span>
-                                            <select class="form-select" id="selectMaterialID">Material ID </select>
+                                                List<span class="text-danger">
+                                                    *</span></span>
+                                            <select class="form-select" id="selectMaterialID" required>Material ID </select>
                                             <div class="invalid-feedback"> Please select material list.</div>
                                         </div>
                                     </div>
@@ -393,7 +398,8 @@
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
                                                 id="labelAccountNo">Account
-                                                No</span>
+                                                No<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textAccountNo" required>
                                             <div class="invalid-feedback"> Please type account no.</div>
                                         </div>
@@ -407,7 +413,8 @@
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
                                                 id="labelAccountName">Account
-                                                Name</span>
+                                                Name<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textAccountName" required>
                                             <div class="invalid-feedback"> Please type account name.</div>
                                         </div>
@@ -420,7 +427,8 @@
                                             <span class="input-group-text col-4 fw-bold"
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
-                                                id="labelBank">Bank</span>
+                                                id="labelBank">Bank<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textBank" required>
                                             <div class="invalid-feedback"> Please type bank.</div>
                                         </div>
@@ -433,7 +441,8 @@
                                             <span class="input-group-text col-4 fw-bold"
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
-                                                id="labelBranch">Branch</span>
+                                                id="labelBranch">Branch<span class="text-danger">
+                                                    *</span></span>
                                             <input type="text" class="form-control" id="textBranch" required>
                                             <div class="invalid-feedback"> Please type branch.</div>
                                         </div>
@@ -481,8 +490,7 @@
                                             <span class="input-group-text col-4 fw-bold"
                                                 onClick=this.parentNode.children[1].focus();
                                                 style="background-color:#343a40; color: #ffffff;"
-                                                id="imageOrientation">Notes<span class="text-danger">
-                                                    *</span></span>
+                                                id="imageOrientation">Notes</span>
                                             <textarea class="form-control" id="textareaNotes"></textarea>
                                         </div>
                                     </div>
@@ -490,18 +498,21 @@
 
                                     <!--create user and clear button-->
                                     <div class="row mt-5">
-                                        <div class="col-6 text-start">
+                                        <div class="col-4 text-start">
                                             <button type="reset" id="buttonClear" value="Clear"
                                                 class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                    style="color: #ffffff;"></i>
-                                                Clear</button>
+                                                    style="color: #ffffff;"></i> Clear</button>
                                         </div>
 
-                                        <div class="col-6 text-start">
+                                        <div class="col-4 text-start">
+                                            <button type="submit" id="buttonSubmit" value="" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pen-to-square" style="color: #ffffff;" ></i>
+                                                Update</button>
+                                        </div>
+                                        <div class="col-4 text-start">
                                             <button type="submit" id="buttonSubmit" value="Add Employee"
-                                                class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                class="btn btn-success" onclick="buttonEmployeeSubmit()"><i class="fa-solid fa-user-plus"
                                                     style="color: #ffffff;"></i> Add</button>
-
                                         </div>
                                     </div>
 
@@ -515,7 +526,8 @@
     </div>
     </div>
     </di4v>
-    <script src="mainjsfile.js"></script>
+    <script src="validationFunc.js"></script>
+    <script src="fillFunc.js"></script>
 </body>
 
 </html>

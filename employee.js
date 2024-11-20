@@ -1,240 +1,288 @@
-let employees = [
-  {
-    id: "emp001",
-    fullname: "Kamal Perera",
-    callingname: "Kamal",
-    NIC: "200257603179",
-    gender: "Male",
-    dob: "2002-03-29",
-    address: "No:25,Mainstreet,Negombo",
-    email: "kmak@gmail.com",
-    contactno: "0719514100",
-    civilstatus: "married",
-    designation_id: { id: 1, name: "manager" },
-    empstatus_id: { id: 1, name: "active" },
-  },
-  {
-    id: "emp002",
-    fullname: "Dilushi Aloka",
-    callingname: "Dilushi",
-    NIC: "200257603589",
-    gender: "Female",
-    dob: "2002-04-12",
-    address: "No:45,Mainstreet,Negombo",
-    email: "dilushi@gmail.com",
-    contactno: "0779685425",
-    civilstatus: "single",
-    designation_id: { id: 1, name: "accountant" },
-    empstatus_id: { id: 1, name: "active" },
-  },
-];
+window.addEventListener("load", () => {
+  //define employee object
+  employee = new Object();
 
-employeeTableBody.innerHTML = "";
-employees.forEach((dataOb, index) => {
-  let tr = document.createElement("tr");
+  let employees = [
+    {
+      id: "emp001",
+      fullname: "Kamal Perera",
+      callingname: "Kamal",
+      NIC: "200257603179",
+      gender: "Male",
+      dob: "2002-03-29",
+      address: "No:25,Mainstreet,Negombo",
+      email: "kmak@gmail.com",
+      contactno: "0719514100",
+      civilstatus: "married",
+      designation_id: { id: 1, name: "manager" },
+      empstatus_id: { id: 1, name: "active" },
+    },
+    {
+      id: "emp002",
+      fullname: "Dilushi Aloka",
+      callingname: "Dilushi",
+      NIC: "200257603589",
+      gender: "Female",
+      dob: "2002-04-12",
+      address: "No:45,Mainstreet,Negombo",
+      email: "dilushi@gmail.com",
+      contactno: "0779685425",
+      civilstatus: "single",
+      designation_id: { id: 1, name: "accountant" },
+      empstatus_id: { id: 1, name: "active" },
+    },
+  ];
 
-  // let tdIndex = document.createElement("td");
-  // tdIndex.innerText = parseInt(index) + 1;
-  // tr.appendChild(tdIndex);
+  employeeTableBody.innerHTML = "";
+  employees.forEach((dataOb, index) => {
+    let tr = document.createElement("tr");
 
-  let tdEmpId = document.createElement("td");
-  tdEmpId.innerText = dataOb.id;
-  tr.appendChild(tdEmpId);
+    // let tdIndex = document.createElement("td");
+    // tdIndex.innerText = parseInt(index) + 1;
+    // tr.appendChild(tdIndex);
 
-  let tdFullName = document.createElement("td");
-  tdFullName.innerText = dataOb.fullname;
-  tr.appendChild(tdFullName);
+    let tdEmpId = document.createElement("td");
+    tdEmpId.innerText = dataOb.id;
+    tr.appendChild(tdEmpId);
 
-  let tdCallingName = document.createElement("td");
-  tdCallingName.innerText = dataOb.callingname;
-  tr.appendChild(tdCallingName);
+    let tdFullName = document.createElement("td");
+    tdFullName.innerText = dataOb.fullname;
+    tr.appendChild(tdFullName);
 
-  let tdNic = document.createElement("td");
-  tdNic.innerText = dataOb.NIC;
-  tr.appendChild(tdNic);
+    let tdCallingName = document.createElement("td");
+    tdCallingName.innerText = dataOb.callingname;
+    tr.appendChild(tdCallingName);
 
-  let tdGender = document.createElement("td");
-  tdGender.innerText = dataOb.gender;
-  tr.appendChild(tdGender);
+    let tdNic = document.createElement("td");
+    tdNic.innerText = dataOb.NIC;
+    tr.appendChild(tdNic);
 
-  let tdDob = document.createElement("td");
-  tdDob.innerText = dataOb.dob;
-  tr.appendChild(tdDob);
+    let tdGender = document.createElement("td");
+    tdGender.innerText = dataOb.gender;
+    tr.appendChild(tdGender);
 
-  let tdAddress = document.createElement("td");
-  tdAddress.innerText = dataOb.address;
-  tr.appendChild(tdAddress);
+    let tdDob = document.createElement("td");
+    tdDob.innerText = dataOb.dob;
+    tr.appendChild(tdDob);
 
-  let tdEmail = document.createElement("td");
-  tdEmail.innerText = dataOb.email;
-  tr.appendChild(tdEmail);
+    let tdAddress = document.createElement("td");
+    tdAddress.innerText = dataOb.address;
+    tr.appendChild(tdAddress);
 
-  let tdContactNo = document.createElement("td");
-  tdContactNo.innerText = dataOb.contactno;
-  tr.appendChild(tdContactNo);
+    let tdEmail = document.createElement("td");
+    tdEmail.innerText = dataOb.email;
+    tr.appendChild(tdEmail);
 
-  let tdCivilstatus = document.createElement("td");
-  tdCivilstatus.innerText = dataOb.civilstatus;
-  tr.appendChild(tdCivilstatus);
+    let tdContactNo = document.createElement("td");
+    tdContactNo.innerText = dataOb.contactno;
+    tr.appendChild(tdContactNo);
 
-  let tdDesignation = document.createElement("td");
-  tdDesignation.innerText = dataOb.designation_id.name;
-  tr.appendChild(tdDesignation);
+    let tdCivilstatus = document.createElement("td");
+    tdCivilstatus.innerText = dataOb.civilstatus;
+    tr.appendChild(tdCivilstatus);
 
-  let tdStatus = document.createElement("td");
-  tdStatus.innerText = dataOb.empstatus_id.name;
-  tr.appendChild(tdStatus);
-  let tdbuttons = document.createElement("td");
+    let tdDesignation = document.createElement("td");
+    tdDesignation.innerText = dataOb.designation_id.name;
+    tr.appendChild(tdDesignation);
 
-  let buttonView = document.createElement("button");
-  buttonView.className = "options-btn";
-  buttonView.innerHTML =
-    "<i class='fa-solid fa-eye' style='color: #071731;'></i>";
-  tdbuttons.appendChild(buttonView);
+    let tdStatus = document.createElement("td");
+    tdStatus.innerText = dataOb.empstatus_id.name;
+    tr.appendChild(tdStatus);
+    let tdbuttons = document.createElement("td");
 
-  let buttonUpdate = document.createElement("button");
-  buttonUpdate.className = "options-btn";
-  buttonUpdate.innerHTML =
-    "<i class='fa-solid fa-pen-to-square'style='color: #089131;'></i>";
-  tdbuttons.appendChild(buttonUpdate);
+    let buttonView = document.createElement("button");
+    buttonView.className = "options-btn";
+    buttonView.innerHTML =
+      "<i class='fa-solid fa-eye' style='color: #071731;'></i>";
+    tdbuttons.appendChild(buttonView);
 
-  let buttonDelete = document.createElement("button");
-  buttonDelete.className = "options-btn";
-  buttonDelete.innerHTML =
-    "<i class='fa-solid fa-trash-can' style='color: #fd0d0d;'></i>";
-  tdbuttons.appendChild(buttonDelete);
-  tr.appendChild(tdbuttons);
-  employeeTableBody.appendChild(tr);
-});
+    let buttonUpdate = document.createElement("button");
+    buttonUpdate.className = "options-btn";
+    buttonUpdate.innerHTML =
+      "<i class='fa-solid fa-pen-to-square'style='color: #089131;'></i>";
+    tdbuttons.appendChild(buttonUpdate);
 
-// //form submit event fuction
-// const buttonEmpSunmit =() =>{
-// refreshEmpTable();
-// }
+    let buttonDelete = document.createElement("button");
+    buttonDelete.className = "options-btn";
+    buttonDelete.innerHTML =
+      "<i class='fa-solid fa-trash-can' style='color: #fd0d0d;'></i>";
+    tdbuttons.appendChild(buttonDelete);
+    tr.appendChild(tdbuttons);
+    employeeTableBody.appendChild(tr);
+  });
 
-// //form update event fuction
-// const buttonEmpUpdate =() =>{
-// refreshEmpTable();
-// }
+  // //form submit event fuction
+  // const buttonEmpSunmit =() =>{
+  // refreshEmpTable();
+  // }
 
-// //form delete event fuction
-// const buttonEmpDelete =() =>{
-// refreshEmpTable();
-// }
+  // //form update event fuction
+  // const buttonEmpUpdate =() =>{
+  // refreshEmpTable();
+  // }
 
+  // //form delete event fuction
+  // const buttonEmpDelete =() =>{
+  // refreshEmpTable();
+  // }
 
+  //****************************************************************************************************************** */
 
+  //FULL NAME VALIDATION
 
-//****************************************************************************************************************** */
+  textFullName.addEventListener("keyup", () => {
+    const fullNameValue = textFullName.value;
+    const regPattern = new RegExp("^([a-z]{2,20}[ ])+([a-z]{2,10})$");
 
-//FULL NAME VALIDATION
+    if (regPattern.test(fullNameValue)) {
+      employee.fullname = textFullName;
+      //bootstrap validation
+      textFullName.classList.remove("is-invalid");
+      textFullName.classList.add("is-valid");
 
-textFullName.addEventListener("keyup", () => {
-  const fullNameValue = textFullName.value;
-  const regPattern = new RegExp("^([a-z]{2,20}[ ])+([a-z]{2,10})$");
-
-  if (regPattern.test(fullNameValue)) {
-    
-    //bootstrap validation
-    textFullName.classList.remove("is-invalid");
-    textFullName.classList.add ("is-valid");
-
-    // converting text to sentence case
-    function titleCase(str) {
-      let words = str.toLowerCase().split(" ");
-      for (let i = 0; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+      // converting text to sentence case
+      function titleCase(str) {
+        let words = str.toLowerCase().split(" ");
+        for (let i = 0; i < words.length; i++) {
+          words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+        return words.join(" ");
       }
-      return words.join(" ");
+
+      const fullName = titleCase(fullNameValue);
+      const fullNameParts = fullName.split(" ");
+
+      // Remove duplicates
+
+      for (const index in fullNameParts) {
+        for (let ind = parseInt(index) + 1; ind < fullNameParts.length; ind++) {
+          if (fullNameParts[index] == fullNameParts[ind])
+            fullNameParts.splice(ind, 1);
+        }
+      }
+
+      //********generating calling name***********
+
+      selectCallingName.innerHTML = "";
+
+      let optionMsg = document.createElement("option");
+      optionMsg.innerHTML = "Select Calling Name";
+      optionMsg.selected = "selected";
+      optionMsg.disabled = "disabled";
+      selectCallingName.appendChild(optionMsg);
+
+      fullNameParts.forEach((part, index) => {
+        console.log(part); //display the parts in the name
+        if (part.length > 2) {
+          const option = document.createElement("option");
+
+          option.innerHTML = part;
+          selectCallingName.appendChild(option);
+        }
+      });
+    } else {
+      employee.textFullName = null;
+      //bootstrap validation
+      textFullName.classList.add("is-invalid");
+      textFullName.classList.remove("is-valid");
     }
+  });
 
-    const fullName = titleCase(fullNameValue);
-    const fullNameParts = fullName.split(" ");
+  //***************************************************************************************************************** */
+  //NIC VALIDATION
+  textNic.addEventListener("keyup", () => {
+    const textNicValue = textNic.value;
+    const idRegEx = new RegExp("^([0-9]{9}[Vv])|([1][9]|[2][0][0-9]{10})$");
+    if (idRegEx.test(textNicValue)) {
+      employee.nic = textNicValue;
+      //bootstrap validation
+      textNic.classList.remove("is-invalid");
+      textNic.classList.add("is-valid");
 
-    // Remove duplicates
+      //******GENERATE GENDER*******
 
-    for (const index in fullNameParts) {
-      for (let ind = parseInt(index) + 1; ind < fullNameParts.length; ind++) {
-        if (fullNameParts[index] == fullNameParts[ind])
-          fullNameParts.splice(ind, 1);
+      let nicPart = "";
+      if (textNicValue.length == 10) {
+        nicPart = textNicValue.substring(2, 5);
+      } else {
+        nicPart = textNicValue.substring(4, 7);
       }
+
+      if (parseInt(nicPart) > 500) {
+        radioFemale.checked = true;
+        employee.gender = "Female";
+      } else {
+        radioMale.checked = true;
+        employee.gender = "male";
+      }
+
+      /********GENERATING DOB************* */
+
+      if (textNicValue.length == 10) {
+      } else {
+      }
+    } else {
+      //bootstrap validation
+      employee.nic = null;
+      employee.gender = null;
+      textNic.classList.add("is-invalid");
+      textNic.classList.remove("is-valid");
     }
+  });
 
-    //********generating calling name***********
+  //***************************************************************************************************** */
 
-    selectCallingName.innerHTML = "";
+  //DESIGNATION AND STATUS DATA FILLING
 
-    let optionMsg = document.createElement("option");
-    optionMsg.innerHTML = "Select Calling Name";
-    optionMsg.selected = "selected";
-    optionMsg.disabled = "disabled";
-    selectCallingName.appendChild(optionMsg);
+  //FILLING DATA TO DESIGNATION DROPDOWN
+  let designationsArray = [
+    { id: 1, name: "owner" },
+    { id: 2, name: "manager" },
+    { id: 3, name: "accountant" },
+  ];
+  //call the function in commonjs to fill the dropdown
+  fillDataToDropdown(
+    selectDesignation,
+    "Select Designation",
+    designationsArray,
+    "name"
+  );
 
-    fullNameParts.forEach((part, index) => {
-      console.log(part); //display the parts in the name
-      if (part.length > 2) {
-        const option = document.createElement("option");
-
-        option.innerHTML = part;
-        selectCallingName.appendChild(option);
-      }
-    });
-  } else {
-    //bootstrap validation
-    textFullName.classList.add ("is-invalid");
-    textFullName.classList.remove ("is-valid");
-  }
+  //FILLING DATA TO STATUS DROPDOWN
+  let empStatusArray = [
+    { id: 1, name: "Active" },
+    { id: 2, name: "Inactive" },
+    { id: 3, name: "Deleted" },
+  ];
+  //call the function in commonjs to fill the dropdown
+  fillDataToDropdown(selectStatus, "Select Status", empStatusArray, "name");
 });
 
+// //SUBMIT BUTTON
 
+// const buttonEmployeeSubmit =() =>{
+//    const employee = new Object();
 
+// //   employee.fullName= textFullName.value;
+// //   employee.callingname=selectCallingName.value;
+// //   employee.nic=textNic.value;
+// //   if (radioFemale.checked) {
+// //     employee.gender="male";
+// //   } if(radioFemale.checked){
+// //     employee.gender="female"
+// //   }
 
+// //   }
+// //   employee.gender=;
+// //   employee.dob=textDob.value;
+// //   employee.address=textAddress.value;
+// //   employee.email=textEmail.value;
+// //   employee.mobileno=textMobileNo.value;
+// //   employee.landno=textLandNo.value;
+// //   employee.civilstatus=;
+// //   employee.designation_id= JSON.parse(selectDesignation.value);
+// //   employee.status_id=JSON.parse(selectStatus.value);
 
-//***************************************************************************************************************** */
-//NIC VALIDATION
-textNic.addEventListener("keyup", () => {
-  const textNicValue = textNic.value;
-const idRegEx = new RegExp("^([0-9]{9}[Vv])|([1][9]|[2][0][0-9]{10})$");
-if (idRegEx.test(textNicValue)) {
-  
-  //bootstrap validation
-  textNic.classList.remove("is-invalid");
-  textNic.classList.add ("is-valid");
+//   console.log(employee);
 
-  //******GENERATE GENDER*******
-
-  let nicPart="";
-  if(textNicValue.length==10){
-nicPart=textNicValue.substring(2,5);
-  }
-  else{
-    nicPart=textNicValue.substring(4,7);
-  }
-
-if(parseInt(nicPart)>500){
-  radioFemale.checked=true;
-}else{
-  radioMale.checked=true;
-}
-
-  /********GENERATING DOB************* */
-
-  if(textNicValue.length==10){
-
-  }
-  else{
-    
-  }
-
-
-
-} else {
-  //bootstrap validation
-  textNic.classList.add ("is-invalid");
-  textNic.classList.remove ("is-valid");
-}
-});
-
-
-
-
+//  }

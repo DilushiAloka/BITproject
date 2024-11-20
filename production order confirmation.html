@@ -244,19 +244,23 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content" style="background-color: #343a40;">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body">
-                        <div class="row">
+    <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background-color:  #343a40;">
+            <div class="modal-header">
 
-                            <div class="col-6">
-                                <div class="card">
-                                    <img src="../images/bg.png" class="card-img" alt="Background Image">
-                                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <div class="card-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="card">
+                            <img src="../images/bg.png" class="card-img" alt="Background Image">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <div class="card-body scrollable-card">
+
 
                                             <!--required mark-->
                                             <div class="row">
@@ -265,7 +269,8 @@
                                                 </div>
                                             </div>
 
-                                            <form action="" class="needs-validation" novalidate method="post">
+                                            <form action="" class="needs-validation" novalidate method="post"
+                                                onsubmit="return false">
 
                                                 <!-- production id filed-->
                                                 <div class="row mt-3">
@@ -318,23 +323,30 @@
                                                                 class="text-danger">
                                                                 *</span></span>
                                                         <input type="date" class="form-control" onkeydown="return false"
-                                                            id="textConfirmationDate" required>
+                                                            onchange="this.classList.add('is-valid');
+                                                        " id="textConfirmationDate" required>
                                                     </div>
                                                 </div>
 
-
                                                 <!--create user and clear button-->
                                                 <div class="row mt-5">
-                                                    <div class="col-6 text-start">
+                                                    <div class="col-4 text-start">
                                                         <button type="reset" id="buttonClear" value="Clear"
                                                             class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                                style="color: #ffffff;"></i>
-                                                            Clear</button>
+                                                                style="color: #ffffff;"></i> Clear</button>
                                                     </div>
 
-                                                    <div class="col-6 text-start">
+                                                    <div class="col-4 text-start">
+                                                        <button type="submit" id="buttonSubmit" value=""
+                                                            class="btn btn-warning">
+                                                            <i class="fa-solid fa-pen-to-square"
+                                                                style="color: #ffffff;"></i>
+                                                            Update</button>
+                                                    </div>
+                                                    <div class="col-4 text-start">
                                                         <button type="submit" id="buttonSubmit" value="Add Employee"
-                                                            class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                            class="btn btn-success" onclick="buttonEmployeeSubmit()"><i
+                                                                class="fa-solid fa-user-plus"
                                                                 style="color: #ffffff;"></i> Add</button>
                                                     </div>
                                                 </div>
@@ -371,7 +383,8 @@
                                                     <span class="input-group-text col-4 fw-bold"
                                                         onClick=this.parentNode.children[1].focus();
                                                         style="background-color:#343a40; color: #ffffff;"
-                                                        id="labelAvailableQuantity">Available Quantity<span class="text-danger">
+                                                        id="labelAvailableQuantity">Available Quantity<span
+                                                            class="text-danger">
                                                             *</span></span>
                                                     <input type="text" class="form-control" required
                                                         id="textAvailableQuantity"
@@ -386,12 +399,36 @@
                                                     <span class="input-group-text col-4 fw-bold"
                                                         onClick=this.parentNode.children[1].focus();
                                                         style="background-color:#343a40; color: #ffffff;"
-                                                        id="labelRequiredQunatity">Required Quantity<span class="text-danger">
+                                                        id="labelRequiredQunatity">Required Quantity<span
+                                                            class="text-danger">
                                                             *</span></span>
                                                     <input type="text" class="form-control" required
                                                         id="textRequiredQuntity"
                                                         onkeyup="textElementValidator(this,'^([0-9]{1,3})$')">
                                                     <div class="invalid-feedback"> Please type correct quantity.</div>
+                                                </div>
+                                            </div>
+
+                                            <!--create user and clear button-->
+                                            <div class="row mt-5">
+                                                <div class="col-4 text-start">
+                                                    <button type="reset" id="buttonClear" value="Clear"
+                                                        class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                            style="color: #ffffff;"></i> Clear</button>
+                                                </div>
+
+                                                <div class="col-4 text-start">
+                                                    <button type="submit" id="buttonSubmit" value=""
+                                                        class="btn btn-warning">
+                                                        <i class="fa-solid fa-pen-to-square"
+                                                            style="color: #ffffff;"></i>
+                                                        Update</button>
+                                                </div>
+                                                <div class="col-4 text-start">
+                                                    <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                        class="btn btn-success" onclick="buttonEmployeeSubmit()"><i
+                                                            class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+                                                        Add</button>
                                                 </div>
                                             </div>
                                 </form>
@@ -419,7 +456,8 @@
         </div>
     </div>
 
-    <script src="mainjsfile.js"></script>
+    <script src="validationFunc.js"></script>
+    <script src="fillFunc.js"></script>
 </body>
 
 </html>

@@ -277,7 +277,8 @@
                                                 </div>
                                             </div>
 
-                                            <form action="" class="needs-validation" novalidate method="post">
+                                            <form action="" class="needs-validation" novalidate method="post"
+                                                onsubmit="return false">
 
 
                                                 <!--customer id filed-->
@@ -336,7 +337,8 @@
                                                                 class="text-danger">
                                                                 *</span></span>
                                                         <input type="date" class="form-control" placeholder="" required
-                                                            id="textDeliveryMethod" onkeyup="return false">
+                                                            id="textDeliveryMethod" onkeydown="return false" onchange="this.classList.add('is-valid');
+                                                ">
                                                     </div>
                                                 </div>
 
@@ -366,8 +368,13 @@
                                                             style="background-color:#343a40; color: #ffffff;"
                                                             id="labelDiscount">Discount<span class="text-danger">
                                                                 *</span></span>
+                                                                <select class="form-select" id="selectDeliveryMethod" required>
+                                                                    <option value="">Discount Amount</option>
+                                                                    <option value="">Discount Percentage</option>
+                                                                </select>
                                                         <input type="text" class="form-control"
                                                             placeholder="Type Discount..." id="textDiscount" required>
+
                                                         <div class="invalid-feedback"> Please type discount.</div>
                                                     </div>
                                                 </div>
@@ -470,8 +477,7 @@
                                                         <span class="input-group-text col-4 fw-bold"
                                                             onClick=this.parentNode.children[1].focus();
                                                             style="background-color:#343a40; color: #ffffff;"
-                                                            id="imageOrientation">Notes<span class="text-danger">
-                                                                *</span></span>
+                                                            id="imageOrientation">Notes</span>
 
                                                         <textarea class="form-control" id="textareaNotes"></textarea>
 
@@ -482,17 +488,24 @@
 
                                                 <!--create user and clear button-->
                                                 <div class="row mt-5">
-                                                    <div class="col-6 text-start">
+                                                    <div class="col-4 text-start">
                                                         <button type="reset" id="buttonClear" value="Clear"
                                                             class="btn btn-secondary"><i class="fa-solid fa-eraser"
                                                                 style="color: #ffffff;"></i> Clear</button>
                                                     </div>
 
-                                                    <div class="col-6 text-start">
+                                                    <div class="col-4 text-start">
+                                                        <button type="submit" id="buttonSubmit" value=""
+                                                            class="btn btn-warning">
+                                                            <i class="fa-solid fa-pen-to-square"
+                                                                style="color: #ffffff;"></i>
+                                                            Update</button>
+                                                    </div>
+                                                    <div class="col-4 text-start">
                                                         <button type="submit" id="buttonSubmit" value="Add Employee"
-                                                            class="btn btn-success"><i class="fa-solid fa-user-plus"
+                                                            class="btn btn-success" onclick="buttonEmployeeSubmit()"><i
+                                                                class="fa-solid fa-user-plus"
                                                                 style="color: #ffffff;"></i> Add</button>
-
                                                     </div>
                                                 </div>
                                             </form>
@@ -565,6 +578,27 @@
                                                 </div>
                                             </div>
 
+                                          
+                                    <!--create user and clear button-->
+                                    <div class="row mt-5">
+                                        <div class="col-4 text-start">
+                                            <button type="reset" id="buttonClear" value="Clear"
+                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                    style="color: #ffffff;"></i> Clear</button>
+                                        </div>
+
+                                        <div class="col-4 text-start">
+                                            <button type="submit" id="buttonSubmit" value="" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pen-to-square" style="color: #ffffff;" ></i>
+                                                Update</button>
+                                        </div>
+                                        <div class="col-4 text-start">
+                                            <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                class="btn btn-success" onclick="buttonEmployeeSubmit()"><i class="fa-solid fa-user-plus"
+                                                    style="color: #ffffff;"></i> Add</button>
+                                        </div>
+                                    </div>
+
                                 </form>
                                 <div class="row mt-3">
                                     <table id="tableProductionMaterial" class="table table-striped table-hover ">
@@ -584,10 +618,17 @@
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                            <script src="mainjsfile.js"></script>
+
+    <script src="validationFunc.js"></script>
+    <script src="fillFunc.js"></script>
 </body>
 
 </html>

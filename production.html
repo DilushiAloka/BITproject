@@ -230,7 +230,7 @@
                                         </div>
                                     </div>
 
-                                    <form action="" class="needs-validation" novalidate method="post">
+                                    <form action="" class="needs-validation" novalidate method="post" onsubmit="return false">
 
                                         <!--production order id filed-->
                                         <div class="row mt-3">
@@ -272,20 +272,25 @@
                                         </div>
 
 
-                                        <!--create user and clear button-->
-                                        <div class="row mt-5">
-                                            <div class="col-6 text-start">
-                                                <button type="reset" id="buttonClear" value="Clear"
-                                                    class="btn btn-secondary"><i class="fa-solid fa-eraser"
-                                                        style="color: #ffffff;"></i> Clear</button>
-                                            </div>
-
-                                            <div class="col-6 text-start">
-                                                <button type="submit" id="buttonSubmit" value="Add Employee"
-                                                    class="btn btn-success"><i class="fa-solid fa-user-plus"
-                                                        style="color: #ffffff;"></i> Add</button>
-                                            </div>
+                                      <!--create user and clear button-->
+                                    <div class="row mt-5">
+                                        <div class="col-4 text-start">
+                                            <button type="reset" id="buttonClear" value="Clear"
+                                                class="btn btn-secondary"><i class="fa-solid fa-eraser"
+                                                    style="color: #ffffff;"></i> Clear</button>
                                         </div>
+
+                                        <div class="col-4 text-start">
+                                            <button type="submit" id="buttonSubmit" value="" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pen-to-square" style="color: #ffffff;" ></i>
+                                                Update</button>
+                                        </div>
+                                        <div class="col-4 text-start">
+                                            <button type="submit" id="buttonSubmit" value="Add Employee"
+                                                class="btn btn-success" onclick="buttonEmployeeSubmit()"><i class="fa-solid fa-user-plus"
+                                                    style="color: #ffffff;"></i> Add</button>
+                                        </div>
+                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -295,7 +300,8 @@
             </div>
         </div>
     </div>
-    <script src="mainjsfile.js"></script>
+    <script src="validationFunc.js"></script>
+    <script src="fillFunc.js"></script>
 </body>
 
 </html>
